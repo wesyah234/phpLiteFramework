@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac81baa3-c781-40ee-8180-55d5a33882b9" name="Default" comment="mssql: fix typo in class property" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="adodb" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Damien Regad &lt;dregad@mantisbt.org&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="bfc196cd-3f83-4296-b817-f76fe0a6a547" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="System" />
+  <component name="ProjectId" id="1TzSFRHpW4Vzh4OrDIewze4Ka6A" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="199" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="219" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="225" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="199" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="219" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="225" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1123" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="bindtime&#9;null&#9;null&#10;inpara&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="PHP" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.scratch_1.php">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration name="x.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/adodb/x.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_1.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="t" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/t.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="test 265" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/pr265.php">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.x.php" />
+      <item itemvalue="PHP Script.test 265" />
+      <item itemvalue="PHP Script.t" />
+      <item itemvalue="PHP Script.scratch_1.php" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.scratch_1.php" />
+        <item itemvalue="JavaScript Debug.x.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac81baa3-c781-40ee-8180-55d5a33882b9" name="Default" comment="" />
+      <created>1459369231815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1459369231815</updated>
+      <workItem from="1459369233886" duration="33000" />
+      <workItem from="1459369287408" duration="889000" />
+      <workItem from="1459370209069" duration="3711000" />
+      <workItem from="1459527565905" duration="26000" />
+      <workItem from="1459409039393" duration="9000" />
+      <workItem from="1459409291197" duration="2276000" />
+      <workItem from="1460276423895" duration="64000" />
+      <workItem from="1460899551510" duration="68000" />
+      <workItem from="1461099766682" duration="4000" />
+      <workItem from="1461449255710" duration="1248000" />
+      <workItem from="1462018754093" duration="61000" />
+      <workItem from="1464193486014" duration="15250000" />
+      <workItem from="1464268944266" duration="174000" />
+      <workItem from="1464302858178" duration="1657000" />
+      <workItem from="1464530819863" duration="11000" />
+      <workItem from="1472398747507" duration="9016000" />
+      <workItem from="1473340707854" duration="6787000" />
+      <workItem from="1480258531538" duration="5401000" />
+      <workItem from="1480633295315" duration="644000" />
+      <workItem from="1481968228677" duration="25000" />
+      <workItem from="1481968863745" duration="10000" />
+      <workItem from="1481969078439" duration="18605000" />
+      <workItem from="1483114022167" duration="110000" />
+      <workItem from="1483274974813" duration="120000" />
+      <workItem from="1483275733819" duration="47000" />
+      <workItem from="1483966226599" duration="4318000" />
+      <workItem from="1496957012647" duration="4408000" />
+      <workItem from="1511630956065" duration="14602000" />
+      <workItem from="1520547082061" duration="8400000" />
+      <workItem from="1521239352462" duration="30000" />
+      <workItem from="1521239425106" duration="18000" />
+      <workItem from="1521240289047" duration="10000" />
+      <workItem from="1522359379939" duration="15931000" />
+      <workItem from="1528818374381" duration="1368000" />
+      <workItem from="1529226903070" duration="1049000" />
+      <workItem from="1533536288552" duration="25000" />
+      <workItem from="1533536407325" duration="1095000" />
+      <workItem from="1533570462911" duration="1339000" />
+      <workItem from="1546102657737" duration="972000" />
+      <workItem from="1546469574460" duration="3274000" />
+      <workItem from="1546727709209" duration="3916000" />
+      <workItem from="1546793065238" duration="5287000" />
+      <workItem from="1548452175513" duration="42000" />
+      <workItem from="1563974348106" duration="760000" />
+      <workItem from="1568412346414" duration="43000" />
+      <workItem from="1574461332571" duration="27173000" />
+      <workItem from="1574962350276" duration="1844000" />
+      <workItem from="1578008920876" duration="6029000" />
+      <workItem from="1578135131140" duration="17043000" />
+      <workItem from="1578614636634" duration="175000" />
+      <workItem from="1578695373620" duration="530000" />
+      <workItem from="1578849113793" duration="3261000" />
+      <workItem from="1578853277694" duration="1526000" />
+      <workItem from="1579042088151" duration="7708000" />
+      <workItem from="1579646799678" duration="13000" />
+      <workItem from="1579903912100" duration="3824000" />
+      <workItem from="1579981236928" duration="16338000" />
+      <workItem from="1580654421458" duration="627000" />
+      <workItem from="1585639737896" duration="3150000" />
+      <workItem from="1585931728035" duration="29000" />
+      <workItem from="1596361615003" duration="1979000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update changelog&#10;">
+      <created>1459370567207</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1459370567207</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix PHP warning in ADORecordset_mysqli::__close()&#10;&#10;PHP Warning: mysqli_free_result() expects parameter 1 to be mysqli_result, integer given&#10;&#10;Fixes #217&#10;">
+      <created>1459411447176</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459411447176</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
+    <MESSAGE value="Update changelog&#10;" />
+    <MESSAGE value="Fix PHP warning in ADORecordset_mysqli::__close()&#10;&#10;PHP Warning: mysqli_free_result() expects parameter 1 to be mysqli_result, integer given&#10;&#10;Fixes #217&#10;" />
+    <MESSAGE value="mssql: fix typo in class property" />
+    <option name="LAST_COMMIT_MESSAGE" value="mssql: fix typo in class property" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

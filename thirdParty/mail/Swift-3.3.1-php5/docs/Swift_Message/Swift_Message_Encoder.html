@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Message_Encoder</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Message_Encoder</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encodes strings in a variety of formats and detects some encoding formats</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Message---Encoder.php.html">/Swift/Message/Encoder.php</a> (line <span class="field">20</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CHEAP_ADDRESS_RE" title="details" class="const-name">CHEAP_ADDRESS_RE</a> = 					<span class="var-type"> '(?#Start of dot-atom
+    )[-!#\$%&amp;\'\*\+\/=\?\^_`{}\|~0-9A-Za-z]+(?:\.[-!#\$%&amp;\'\*\+\/=\?\^_`{}\|~0-9A-Za-z]+)*(?#
+    End of dot-atom)(?:@(?#Start of domain)[-0-9A-Za-z]+(?:\.[-0-9A-Za-z]+)*(?#End of domain))?'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+												<div class="var-title">
+					static <span class="var-type"><a href="../Swift_Message/Swift_Message_Encoder.html">Swift_Message_Encoder</a></span>
+					<a href="#$instance" title="details" class="var-name">$instance</a>
+				</div>
+																							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																				<div class="method-definition">
+					static 						<span class="method-result">Message_Encoder</span>
+										<a href="#instance" title="details" class="method-name">instance</a>
+										()
+									</div>
+																																																																																								
+												<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#addressChunk" title="details" class="method-name">addressChunk</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#base64Encode" title="details" class="method-name">base64Encode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span> = <span class="var-default">0</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#base64EncodeFile" title="details" class="method-name">base64EncodeFile</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encode7Bit" title="details" class="method-name">encode7Bit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#encode7BitFile" title="details" class="method-name">encode7BitFile</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encode7BitPrintable" title="details" class="method-name">encode7BitPrintable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encode8Bit" title="details" class="method-name">encode8Bit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#encode8BitFile" title="details" class="method-name">encode8BitFile</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#fixLE" title="details" class="method-name">fixLE</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$le</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getHcf" title="details" class="method-name">getHcf</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$factor</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#header7BitEncode" title="details" class="method-name">header7BitEncode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span> = <span class="var-default">0</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#is7BitAscii" title="details" class="method-name">is7BitAscii</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#is7BitPrintable" title="details" class="method-name">is7BitPrintable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isHeaderSafe" title="details" class="method-name">isHeaderSafe</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isUTF8" title="details" class="method-name">isUTF8</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#QPEncode" title="details" class="method-name">QPEncode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span> = <span class="var-default">0</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#QPEncodeFile" title="details" class="method-name">QPEncodeFile</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#quoteChunk" title="details" class="method-name">quoteChunk</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$input</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#rawBase64Encode" title="details" class="method-name">rawBase64Encode</a>
+											(<span class="var-type">The</span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#rawQPEncode" title="details" class="method-name">rawQPEncode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bin</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#rfc2047Encode" title="details" class="method-name">rfc2047Encode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span> = <span class="var-default">&quot;iso-8859-1&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">&quot;en-us&quot;</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">5</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$instance" id="$instance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type"><a href="../Swift_Message/Swift_Message_Encoder.html">Swift_Message_Encoder</a></span>
+			<span class="var-name">$instance</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A singleton of this class</p>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodinstance" id="instance"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method instance</span> (line <span class="line-number">38</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retreive an instance of the encoder as a singleton.</p>
+<p class="description"><p>New instances are never ever needed since it's monostatic.</p></p>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">Message_Encoder</span>
+		<span class="method-name">
+			instance
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="methodaddressChunk" id="addressChunk"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addressChunk</span> (line <span class="line-number">53</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Break a string apart at every occurence of &lt;add@ress&gt; and return an array  This method does NOT remove any characters like a preg_split() would do.</p>
+<p class="description"><p>Elements matching an address start with &quot;a&quot; followed by the numeric index</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			addressChunk
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$input</span><span class="var-description">: The input string to separate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbase64Encode" id="base64Encode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">base64Encode</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the base64 encoded version of the string</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			base64Encode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], <span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The input string to encode</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: The maximum length of each line of output (inc CRLF)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$init_chunk</span><span class="var-description">: The maximum length of the first line in the output (for headers)</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$headers</span><span class="var-description">: Whether email addresses between &lt; and &gt; chars should be preserved or not</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbase64EncodeFile" id="base64EncodeFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">base64EncodeFile</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the base64 encoded version of a file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_FileException If the file cannot be read</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			base64EncodeFile
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift/Swift_File.html">Swift_File</a></span>
+				<span class="var-name">$file</span><span class="var-description">: The file input stream</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: Max line length</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode7Bit" id="encode7Bit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode7Bit</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encode a string as 7bit ascii</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encode7Bit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Input data to encode</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: Max line length</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode7BitFile" id="encode7BitFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode7BitFile</span> (line <span class="line-number">297</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a 7bit string from a file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_FileException If the file cannot be read</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			encode7BitFile
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift/Swift_File.html">Swift_File</a></span>
+				<span class="var-name">$file</span><span class="var-description">: The file stream to read from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: The max line length</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode7BitPrintable" id="encode7BitPrintable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode7BitPrintable</span> (line <span class="line-number">364</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Strip out any characters which are not in the ASCII 7bit printable range</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encode7BitPrintable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The string to clean</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode8Bit" id="encode8Bit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode8Bit</span> (line <span class="line-number">313</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the 8bit encoded form of a string (unchanged there-abouts)</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encode8Bit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Input data to encode</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: Maximum line length</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode8BitFile" id="encode8BitFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode8BitFile</span> (line <span class="line-number">325</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a 8bit string from a file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_FileException If the file cannot be read</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			encode8BitFile
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift/Swift_File.html">Swift_File</a></span>
+				<span class="var-name">$file</span><span class="var-description">: The file stream to read from</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: Max line length (including CRLF)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfixLE" id="fixLE"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fixLE</span> (line <span class="line-number">444</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fixes line endings to be whatever is specified by the user</p>
+<p class="description"><p>SMTP requires the CRLF be used, but using sendmail in -t mode uses LF  This method also escapes dots on a start of line to avoid injection</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			fixLE
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$le</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The data to fix</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$le</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetHcf" id="getHcf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getHcf</span> (line <span class="line-number">450</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getHcf
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$factor</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$factor</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodheader7BitEncode" id="header7BitEncode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">header7BitEncode</span> (line <span class="line-number">343</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Keeps lines longer than 76 characters trimmed down to size</p>
+<p class="description"><p>This currently does not convert other string encodings into 7bit</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			header7BitEncode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], <span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The data to make safe for headers (defaults to RFC 2822 standards)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: maximum length of lines returned</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$init_chunk</span><span class="var-description">: The maximum length of the first line</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The Line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodis7BitAscii" id="is7BitAscii"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">is7BitAscii</span> (line <span class="line-number">412</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">If the characters fall exclusively in the 7bit ascii range, return true</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			is7BitAscii
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Input to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodis7BitPrintable" id="is7BitPrintable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">is7BitPrintable</span> (line <span class="line-number">394</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This function checks for 7bit *printable* characters</p>
+<p class="description"><p>which excludes \r \n \t etc and so, is safe for use in mail headers  Actual permitted chars [\ !&quot;#\$%&amp;'\(\)\*\+,-\.\/0123456789:;&lt;=&gt;\?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\[\\\]\^_`abcdefghijklmnopqrstuvwxyz{\|}~]  Ranges \x00-\x1F are printer control sequences  \x7F is the ascii delete character</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			is7BitPrintable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to check against</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisHeaderSafe" id="isHeaderSafe"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isHeaderSafe</span> (line <span class="line-number">403</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check that a string does not contain any evil characters for headers.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isHeaderSafe
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The string to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisUTF8" id="isUTF8"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isUTF8</span> (line <span class="line-number">373</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Detect if a string contains multi-byte non-ascii chars that fall in the UTF-8 ranges</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isUTF8
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to detect UTF-8 sequences in</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodQPEncode" id="QPEncode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">QPEncode</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the quoted printable version of the input string</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			QPEncode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], <span class="var-type">int</span>&nbsp;<span class="var-name">$init_chunk</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: The input string to encode</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: The maximum length of each line of output (inc CRLF)</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$init_chunk</span><span class="var-description">: The maximum length of the first line in the output (for headers)</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$headers</span><span class="var-description">: Whether email addresses between &lt; and &gt; chars should be preserved or not</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodQPEncodeFile" id="QPEncodeFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">QPEncodeFile</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return a file as a quoted printable encoded string</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_FileException If the file cannot be read</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			QPEncodeFile
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift/Swift_File.html">Swift_File</a></span>
+				<span class="var-name">$file</span><span class="var-description">: The file to encode</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: Max line length</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquoteChunk" id="quoteChunk"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteChunk</span> (line <span class="line-number">73</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Break a string apart at every occurence of &lt;xxxyyy&gt; and return an array  This method does NOT remove any characters like a preg_split() would do.</p>
+<p class="description"><p>Elements matching a quoted string start with &quot;a&quot; followed by the numeric index</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			quoteChunk
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$input</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$input</span><span class="var-description">: The input string to separate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrawBase64Encode" id="rawBase64Encode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rawBase64Encode</span> (line <span class="line-number">140</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the base64 encoded version of a string with no breaks</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			rawBase64Encode
+		</span>
+					(<span class="var-type">The</span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">The</span>
+				<span class="var-name">$string</span><span class="var-description">: input string to encode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrawQPEncode" id="rawQPEncode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rawQPEncode</span> (line <span class="line-number">231</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the QP encoded version of a string with no breaks</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			rawQPEncode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bin</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span><span class="var-description">: The input to encode</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bin</span><span class="var-description">: True if the data we're encoding is binary</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrfc2047Encode" id="rfc2047Encode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rfc2047Encode</span> (line <span class="line-number">426</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encode a string for RFC 2047 compatability (url-encode)</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			rfc2047Encode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charset</span> = <span class="var-default">&quot;iso-8859-1&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">&quot;en-us&quot;</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$chunk</span> = <span class="var-default">76</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$le</span> = <span class="var-default">&quot;\r\n&quot;</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">5</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">5</span><span class="var-description">: The line ending</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: The input for encoding</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charset</span><span class="var-description">: The charset used</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$language</span><span class="var-description">: The language used</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$chunk</span><span class="var-description">: The maximum line length</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$le</span><span class="var-description">: The maximum length of the first line</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constCHEAP_ADDRESS_RE" id="CHEAP_ADDRESS_RE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CHEAP_ADDRESS_RE</span>
+			 = <span class="const-default"> '(?#Start of dot-atom<br />    )[-!#\$%&amp;\'\*\+\/=\?\^_`{}\|~0-9A-Za-z]+(?:\.[-!#\$%&amp;\'\*\+\/=\?\^_`{}\|~0-9A-Za-z]+)*(?#<br />    End of dot-atom)(?:@(?#Start of domain)[-0-9A-Za-z]+(?:\.[-0-9A-Za-z]+)*(?#End of domain))?'</span>
+			(line <span class="line-number">25</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A regular expression which matches valid e-mail addresses (including some unlikely ones)</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:37 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Plugin_BandwidthMonitor</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Plugin_BandwidthMonitor</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Swift Bandwidth Monitor.</p>
+<p class="description"><p>Tracks bytes in and out of the connection.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Plugin---BandwidthMonitor.php.html">/Swift/Plugin/BandwidthMonitor.php</a> (line <span class="field">21</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Swift_Plugin/Swift_Plugin_Throttler.html">Swift_Plugin_Throttler</a></td>
+					<td>
+											Throttler plugin for Swift Mailer.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addBytesIn" title="details" class="method-name">addBytesIn</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addBytesOut" title="details" class="method-name">addBytesOut</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#commandSent" title="details" class="method-name">commandSent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getBytesIn" title="details" class="method-name">getBytesIn</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getBytesOut" title="details" class="method-name">getBytesOut</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#responseReceived" title="details" class="method-name">responseReceived</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBytesIn" title="details" class="method-name">setBytesIn</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBytesOut" title="details" class="method-name">setBytesOut</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodaddBytesIn" id="addBytesIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addBytesIn</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add some bytes to the running totals for incoming bandwidth</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addBytesIn
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num</span><span class="var-description">: Bytes in</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddBytesOut" id="addBytesOut"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addBytesOut</span> (line <span class="line-number">68</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add some bytes to the running totals for outgoing bandwidth</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addBytesOut
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num</span><span class="var-description">: Bytes out</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcommandSent" id="commandSent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">commandSent</span> (line <span class="line-number">38</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Part of the interface which is notified after a command is sent.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			commandSent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Events/Swift_Events_CommandEvent.html">Swift_Events_CommandEvent</a></span>
+				<span class="var-name">$e</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Swift_Plugin/Swift_Plugin_Throttler.html#methodcommandSent">Swift_Plugin_Throttler::commandSent()</a>
+								: Part of the interface which is notified after a command is sent.
+							</li>
+				</ul>
+	</div>
+<a name="methodgetBytesIn" id="getBytesIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBytesIn</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the total number of bytes received</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getBytesIn
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetBytesOut" id="getBytesOut"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBytesOut</span> (line <span class="line-number">85</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the total number of bytes sent</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getBytesOut
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodresponseReceived" id="responseReceived"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">responseReceived</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Part of the interface which is notified when a response is received</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			responseReceived
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Events/Swift_Events_ResponseEvent.html">Swift_Events_ResponseEvent</a></span>
+				<span class="var-name">$e</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetBytesIn" id="setBytesIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBytesIn</span> (line <span class="line-number">94</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the total number of bytes received.</p>
+<p class="description"><p>Can be used to reset the counters at runtime.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBytesIn
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num</span><span class="var-description">: The bytes in</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetBytesOut" id="setBytesOut"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBytesOut</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the total number of bytes sent.</p>
+<p class="description"><p>Can be used to reset the counters at runtime.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBytesOut
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num</span><span class="var-description">: The bytes out</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:31 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

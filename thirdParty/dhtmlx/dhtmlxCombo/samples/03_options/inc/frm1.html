@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Initialization</title>
+	<script>
+		window.dhx_globalImgPath="../../../codebase/imgs/";
+	</script>
+	<link rel="STYLESHEET" type="text/css" href="../../../codebase/dhtmlxcombo.css">
+	
+	<script  src="../../../codebase/dhtmlxcommon.js"></script>
+	<script  src="../../../codebase/dhtmlxcombo.js"></script>
+	<script src="../../../codebase/ext/dhtmlxcombo_whp.js" type="text/javascript"></script>
+</head>
+  
+
+<body>
+Combo in iframe
+<table>
+	<tr>
+		<td style="padding-top:130"><div id="combo_zone2" style="width:200px; height:30px;"></div></td> 
+	</tr>
+	
+</table>
+		
+
+	<script>
+	
+        var z=new dhtmlXCombo("combo_zone2","alfa2",200);
+		
+        z.loadXML("../../common/data_03_options.xml");
+		
+		z.enableOptionAutoPositioning();
+
+</script>
+</body>
+</html>

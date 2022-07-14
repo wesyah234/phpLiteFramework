@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Message_Mime</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Message_Mime</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mime is the underbelly for Messages, Attachments, Parts, Embedded Images, Forwarded Mail, etc</p>
+<p class="description"><p>In fact, every single component of the composed email is simply a new Mime document nested inside another  When you piece an email together in this way you see just how straight-forward it really is</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Message---Mime.php.html">/Swift/Message/Mime.php</a> (line <span class="field">23</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Swift_Message/Swift_Message_Part.html">Swift_Message_Part</a></td>
+					<td>
+											MIME Part body component for Swift Mailer
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Swift_Message/Swift_Message_Attachment.html">Swift_Message_Attachment</a></td>
+					<td>
+											Attachment component for Swift Mailer
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Swift_Message/Swift_Message.html">Swift_Message</a></td>
+					<td>
+											Swift Message class
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HTML" title="details" class="const-name">HTML</a> = 					<span class="var-type"> &quot;text/html&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LEVEL_ALTERNATIVE" title="details" class="const-name">LEVEL_ALTERNATIVE</a> = 					<span class="var-type"> &quot;alternative&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LEVEL_MIXED" title="details" class="const-name">LEVEL_MIXED</a> = 					<span class="var-type"> &quot;mixed&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LEVEL_RELATED" title="details" class="const-name">LEVEL_RELATED</a> = 					<span class="var-type"> &quot;related&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LEVEL_TOP" title="details" class="const-name">LEVEL_TOP</a> = 					<span class="var-type"> &quot;top&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MISC" title="details" class="const-name">MISC</a> = 					<span class="var-type"> &quot;application/octet-stream&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PLAIN" title="details" class="const-name">PLAIN</a> = 					<span class="var-type"> &quot;text/plain&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SAFE_LENGTH" title="details" class="const-name">SAFE_LENGTH</a> = 					<span class="var-type"> 1000</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VERY_SAFE_LENGTH" title="details" class="const-name">VERY_SAFE_LENGTH</a> = 					<span class="var-type"> 76</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+												<div class="var-title">
+					static <span class="var-type">array</span>
+					<a href="#$usedBoundaries" title="details" class="var-name">$usedBoundaries</a>
+				</div>
+																							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																												<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#generateBoundary" title="details" class="method-name">generateBoundary</a>
+										()
+									</div>
+																																																																																																																																																								
+												<div class="method-definition">
+											<span class="method-result">Swift_Message_Mime</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#addChild" title="details" class="method-name">addChild</a>
+											(<span class="var-type"><a href="../Swift_Message/Swift_Message_Mime.html">Swift_Message_Mime</a></span>&nbsp;<span class="var-name">$mime</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$after</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#build" title="details" class="method-name">build</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+										<a href="#buildData" title="details" class="method-name">buildData</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Swift_Message/Swift_Message_Mime.html">Swift_Message_Mime</a></span>
+										<a href="#getChild" title="details" class="method-name">getChild</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getContentType" title="details" class="method-name">getContentType</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string,Swift_File</span>
+										<a href="#getData" title="details" class="method-name">getData</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getEncoding" title="details" class="method-name">getEncoding</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLE" title="details" class="method-name">getLE</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLevel" title="details" class="method-name">getLevel</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#hasChild" title="details" class="method-name">hasChild</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listChildren" title="details" class="method-name">listChildren</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#numChildren" title="details" class="method-name">numChildren</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preBuild" title="details" class="method-name">preBuild</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#removeChild" title="details" class="method-name">removeChild</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setContentType" title="details" class="method-name">setContentType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setData" title="details" class="method-name">setData</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setEncoding" title="details" class="method-name">setEncoding</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$encoding</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$recursive</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$non_ascii</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setHeaders" title="details" class="method-name">setHeaders</a>
+											(<span class="var-type"><a href="../Swift_Message/Swift_Message_Headers.html">Swift_Message_Headers</a></span>&nbsp;<span class="var-name">$headers</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#setLE" title="details" class="method-name">setLE</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLineWrap" title="details" class="method-name">setLineWrap</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$len</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#uncacheAll" title="details" class="method-name">uncacheAll</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$usedBoundaries" id="$usedBoundaries"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type">array</span>
+			<span class="var-name">$usedBoundaries</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A list of used MIME boundaries after they're generated.</p>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgenerateBoundary" id="generateBoundary"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateBoundary</span> (line <span class="line-number">116</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Compute a unique boundary</p>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateBoundary
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">Swift_Message_Mime</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Swift_Message/Swift_Message_Part.html#method__construct">Swift_Message_Part::__construct()</a>
+								: Constructor
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_Attachment.html#method__construct">Swift_Message_Attachment::__construct()</a>
+								: Constructor
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_EmbeddedFile.html#method__construct">Swift_Message_EmbeddedFile::__construct()</a>
+								: Constructor
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_Image.html#method__construct">Swift_Message_Image::__construct()</a>
+								: Constructor
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message.html#method__construct">Swift_Message::__construct()</a>
+								: Ctor.
+							</li>
+				</ul>
+	</div>
+<a name="methodaddChild" id="addChild"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addChild</span> (line <span class="line-number">393</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Nest a child mime part in this document</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The identifier for this part</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			addChild
+		</span>
+					(<span class="var-type"><a href="../Swift_Message/Swift_Message_Mime.html">Swift_Message_Mime</a></span>&nbsp;<span class="var-name">$mime</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">null</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$after</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Message/Swift_Message_Mime.html">Swift_Message_Mime</a></span>
+				<span class="var-name">$mime</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: The identifier to use, optional</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$after</span><span class="var-description">: Add the part before (-1) or after (+1) the other parts</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuild" id="build"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">build</span> (line <span class="line-number">481</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Compile the entire MIME document into a string  The returned string may be used in other documents if needed.</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			build
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodbuildData" id="buildData"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildData</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the data in the format suitable for sending</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_FileException If the file stream given cannot be read</li>
+				<li><span class="field">throws:</span> Swift_Message_MimeException If some required headers have been forcefully removed</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Cache/Swift_Cache_OutputStream.html">Swift_Cache_OutputStream</a></span>
+		<span class="method-name">
+			buildData
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetChild" id="getChild"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getChild</span> (line <span class="line-number">423</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a child document, identified by $id</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The child document</li>
+				<li><span class="field">throws:</span> Swift_Message_MimeException If no such child exists</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Swift_Message/Swift_Message_Mime.html">Swift_Message_Mime</a></span>
+		<span class="method-name">
+			getChild
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: The identifier for this child</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetContentType" id="getContentType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getContentType</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the content type which has been set</p>
+<p class="description"><p>The MIME 1.0 Content-Type is provided as a string</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getContentType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetData" id="getData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getData</span> (line <span class="line-number">269</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the string which makes up the body of this MIME document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string,Swift_File</span>
+		<span class="method-name">
+			getData
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetEncoding" id="getEncoding"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEncoding</span> (line <span class="line-number">245</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the encoding format used in this document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getEncoding
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLE" id="getLE"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLE</span> (line <span class="line-number">160</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the line ending sequence</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLE
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLevel" id="getLevel"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLevel</span> (line <span class="line-number">475</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the level at which this mime part would appear in a document</p>
+<p class="description"><p>One of &quot;mixed&quot;, &quot;alternative&quot; or &quot;related&quot;</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLevel
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Swift_Message/Swift_Message_Part.html#methodgetLevel">Swift_Message_Part::getLevel()</a>
+								: Get the level in the MIME hierarchy at which this section should appear.
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_Attachment.html#methodgetLevel">Swift_Message_Attachment::getLevel()</a>
+								: Get the level in the MIME hierarchy at which this section should appear.
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_EmbeddedFile.html#methodgetLevel">Swift_Message_EmbeddedFile::getLevel()</a>
+								: Get the level in the MIME hierarchy at which this section should appear.
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message.html#methodgetLevel">Swift_Message::getLevel()</a>
+								: Get the level in the MIME hierarchy at which this section should appear.
+							</li>
+				</ul>
+	</div>
+<a name="methodhasChild" id="hasChild"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasChild</span> (line <span class="line-number">413</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if a child exists identified by $id</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasChild
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: Identifier to look for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlistChildren" id="listChildren"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listChildren</span> (line <span class="line-number">458</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List the IDs of all children in this document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodnumChildren" id="numChildren"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">numChildren</span> (line <span class="line-number">466</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the total number of children present in this document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			numChildren
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpreBuild" id="preBuild"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">preBuild</span> (line <span class="line-number">499</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute any logic needed prior to building</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preBuild
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Swift_Message/Swift_Message_Part.html#methodpreBuild">Swift_Message_Part::preBuild()</a>
+								: Pre-compilation logic
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_Attachment.html#methodpreBuild">Swift_Message_Attachment::preBuild()</a>
+								: Execute needed logic prior to building
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message.html#methodpreBuild">Swift_Message::preBuild()</a>
+								: Execute needed logic prior to compilation
+							</li>
+				</ul>
+	</div>
+<a name="methodremoveChild" id="removeChild"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeChild</span> (line <span class="line-number">440</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a part from the document</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Swift_Message_MimeException If no such part exists</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeChild
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: The identifier of the child</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetContentType" id="setContentType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setContentType</span> (line <span class="line-number">183</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the content type of this MIME document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setContentType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: The content type to use in the same format as MIME 1.0 expects</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetData" id="setData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setData</span> (line <span class="line-number">259</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specify the string which makes up the body of this message  HINT: You can always nest another MIME document here if you call it's build() method.</p>
+<p class="description"><p>$data can be an object of Swift_File or a string</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setData
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The body of the document</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Swift_Message/Swift_Message_Attachment.html#methodsetData">Swift_Message_Attachment::setData()</a>
+								: Overrides setData() in MIME so that a filename can be set
+							</li>
+					<li>
+				<a href="../Swift_Message/Swift_Message_Image.html#methodsetData">Swift_Message_Image::setData()</a>
+								: Set data for the image
+							</li>
+				</ul>
+	</div>
+<a name="methodsetEncoding" id="setEncoding"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEncoding</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the encoding format to be used on the body of the document</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setEncoding
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$encoding</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$recursive</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$non_ascii</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$encoding</span><span class="var-description">: The encoding type used</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$recursive</span><span class="var-description">: If this encoding format should be used recursively. Note, this only takes effect if no encoding is set in the children.</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$non_ascii</span><span class="var-description">: If the encoding should only be applied when the string is not ascii.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHeaders" id="setHeaders"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setHeaders</span> (line <span class="line-number">130</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Replace the current headers with new ones</p>
+<p class="description"><p>DO NOT DO THIS UNLESS YOU KNOW WHAT YOU'RE DOING!</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setHeaders
+		</span>
+					(<span class="var-type"><a href="../Swift_Message/Swift_Message_Headers.html">Swift_Message_Headers</a></span>&nbsp;<span class="var-name">$headers</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Message/Swift_Message_Headers.html">Swift_Message_Headers</a></span>
+				<span class="var-name">$headers</span><span class="var-description">: The headers to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLE" id="setLE"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLE</span> (line <span class="line-number">139</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the line ending character to use</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			setLE
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$le</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$le</span><span class="var-description">: The line ending sequence</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLineWrap" id="setLineWrap"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLineWrap</span> (line <span class="line-number">381</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the size at which lines wrap around (includes the CRLF)</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLineWrap
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$len</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$len</span><span class="var-description">: The length of a line</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduncacheAll" id="uncacheAll"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">uncacheAll</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reset the entire cache state from this branch of the tree and traversing down through the children</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			uncacheAll
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constHTML" id="HTML"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HTML</span>
+			 = <span class="const-default"> &quot;text/html&quot;</span>
+			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for HTML emails</p>
+	
+	
+</div>
+<a name="constLEVEL_ALTERNATIVE" id="LEVEL_ALTERNATIVE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LEVEL_ALTERNATIVE</span>
+			 = <span class="const-default"> &quot;alternative&quot;</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for MIME sections which must appear in the multipart/alternative section.</p>
+	
+	
+</div>
+<a name="constLEVEL_MIXED" id="LEVEL_MIXED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LEVEL_MIXED</span>
+			 = <span class="const-default"> &quot;mixed&quot;</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for MIME sections which must appear in the multipart/mixed section.</p>
+	
+	
+</div>
+<a name="constLEVEL_RELATED" id="LEVEL_RELATED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LEVEL_RELATED</span>
+			 = <span class="const-default"> &quot;related&quot;</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for MIME sections which must appear in the multipart/related section.</p>
+	
+	
+</div>
+<a name="constLEVEL_TOP" id="LEVEL_TOP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LEVEL_TOP</span>
+			 = <span class="const-default"> &quot;top&quot;</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for MIME sections which must appear in the multipart/mixed section.</p>
+	
+	
+</div>
+<a name="constMISC" id="MISC"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MISC</span>
+			 = <span class="const-default"> &quot;application/octet-stream&quot;</span>
+			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for miscellaneous mime type</p>
+	
+	
+</div>
+<a name="constPLAIN" id="PLAIN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PLAIN</span>
+			 = <span class="const-default"> &quot;text/plain&quot;</span>
+			(line <span class="line-number">28</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for plain-text emails</p>
+	
+	
+</div>
+<a name="constSAFE_LENGTH" id="SAFE_LENGTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SAFE_LENGTH</span>
+			 = <span class="const-default"> 1000</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for safe line length in almost all places</p>
+	
+	
+</div>
+<a name="constVERY_SAFE_LENGTH" id="VERY_SAFE_LENGTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VERY_SAFE_LENGTH</span>
+			 = <span class="const-default"> 76</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constant for really safe line length</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:47 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

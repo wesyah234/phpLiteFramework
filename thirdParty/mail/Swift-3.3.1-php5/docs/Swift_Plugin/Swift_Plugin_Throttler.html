@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Plugin_Throttler</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Plugin_Throttler</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throttler plugin for Swift Mailer.</p>
+<p class="description"><p>Restricts the speed at which Swift will operate.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Plugin---Throttler.php.html">/Swift/Plugin/Throttler.php</a> (line <span class="field">21</span>)
+		</p>
+		
+				
+		<pre><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html">Swift_Plugin_BandwidthMonitor</a>
+   |
+   --Swift_Plugin_Throttler</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#commandSent" title="details" class="method-name">commandSent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getBytesPerMinute" title="details" class="method-name">getBytesPerMinute</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getEmailsPerMinute" title="details" class="method-name">getEmailsPerMinute</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getSent" title="details" class="method-name">getSent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getTimeLapse" title="details" class="method-name">getTimeLapse</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sendPerformed" title="details" class="method-name">sendPerformed</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBytesPerMinute" title="details" class="method-name">setBytesPerMinute</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$bpm</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setEmailsPerMinute" title="details" class="method-name">setEmailsPerMinute</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$epm</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setSent" title="details" class="method-name">setSent</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTime" title="details" class="method-name">setTime</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#wait" title="details" class="method-name">wait</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$secs</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodcommandSent" id="commandSent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">commandSent</span> (line <span class="line-number">48</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Part of the interface which is notified after a command is sent.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			commandSent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Events/Swift_Events_CommandEvent.html">Swift_Events_CommandEvent</a></span>
+				<span class="var-name">$e</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodcommandSent">Swift_Plugin_BandwidthMonitor::commandSent()</a></dt>
+						<dd>Part of the interface which is notified after a command is sent.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetBytesPerMinute" id="getBytesPerMinute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBytesPerMinute</span> (line <span class="line-number">141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the number of bytes allowed per minute.</p>
+<p class="description"><p>Reurns NULL if not used.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getBytesPerMinute
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetEmailsPerMinute" id="getEmailsPerMinute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEmailsPerMinute</span> (line <span class="line-number">164</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the rate as number of emails per minute.</p>
+<p class="description"><p>Returns null if not used.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getEmailsPerMinute
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSent" id="getSent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSent</span> (line <span class="line-number">118</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the number of emails sent</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getSent
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTimeLapse" id="getTimeLapse"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTimeLapse</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the time taken thus far (full seconds).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getTimeLapse
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsendPerformed" id="sendPerformed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sendPerformed</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Part of the interface which is notified when a message has been sent.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sendPerformed
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Events/Swift_Events_SendEvent.html">Swift_Events_SendEvent</a></span>
+				<span class="var-name">$e</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetBytesPerMinute" id="setBytesPerMinute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBytesPerMinute</span> (line <span class="line-number">126</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the throttling rate as bytes per minute</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBytesPerMinute
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$bpm</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$bpm</span><span class="var-description">: The maximum number of outgoing bytes in 60 seconds.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEmailsPerMinute" id="setEmailsPerMinute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEmailsPerMinute</span> (line <span class="line-number">149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the rate as emails-per-minute.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setEmailsPerMinute
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$epm</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$epm</span><span class="var-description">: The max number of emails to send in a minute.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSent" id="setSent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setSent</span> (line <span class="line-number">110</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the number of emails sent</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSent
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$num</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$num</span><span class="var-description">: Emails sent so far</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTime" id="setTime"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTime</span> (line <span class="line-number">93</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the time if it's not already set</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTime
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodwait" id="wait"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">wait</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Wait for $seconds before continuing</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			wait
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$secs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$secs</span><span class="var-description">: The number of seconds to wait</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html">Swift_Plugin_BandwidthMonitor</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodaddBytesIn">Swift_Plugin_BandwidthMonitor::addBytesIn()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodaddBytesOut">Swift_Plugin_BandwidthMonitor::addBytesOut()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodcommandSent">Swift_Plugin_BandwidthMonitor::commandSent()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodgetBytesIn">Swift_Plugin_BandwidthMonitor::getBytesIn()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodgetBytesOut">Swift_Plugin_BandwidthMonitor::getBytesOut()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodresponseReceived">Swift_Plugin_BandwidthMonitor::responseReceived()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodsetBytesIn">Swift_Plugin_BandwidthMonitor::setBytesIn()</a></span><br>
+													<span class="method-name"><a href="../Swift_Plugin/Swift_Plugin_BandwidthMonitor.html#methodsetBytesOut">Swift_Plugin_BandwidthMonitor::setBytesOut()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:53 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

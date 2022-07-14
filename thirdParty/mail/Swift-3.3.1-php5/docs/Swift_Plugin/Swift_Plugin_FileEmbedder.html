@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Plugin_FileEmbedder</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Plugin_FileEmbedder</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Swift FileEmbedder Plugin to embed remote files.</p>
+<p class="description"><p>Scans a Swift_Message instance for remote files and then embeds them before sending.  This also embeds local files from disk.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Plugin---FileEmbedder.php.html">/Swift/Plugin/FileEmbedder.php</a> (line <span class="field">22</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addProtocol" title="details" class="method-name">addProtocol</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$prot</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addType" title="details" class="method-name">addType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#beforeSendPerformed" title="details" class="method-name">beforeSendPerformed</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clearCache" title="details" class="method-name">clearCache</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#embedLocalFile" title="details" class="method-name">embedLocalFile</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#embedRemoteFile" title="details" class="method-name">embedRemoteFile</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#getEmbedLocalFiles" title="details" class="method-name">getEmbedLocalFiles</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#getEmbedRemoteFiles" title="details" class="method-name">getEmbedRemoteFiles</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLocalFilePattern" title="details" class="method-name">getLocalFilePattern</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag_name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getLocalFilePatternFormat" title="details" class="method-name">getLocalFilePatternFormat</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getProtocols" title="details" class="method-name">getProtocols</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getRemoteFilePattern" title="details" class="method-name">getRemoteFilePattern</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag_name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getRemoteFilePatternFormat" title="details" class="method-name">getRemoteFilePatternFormat</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getTagDefinition" title="details" class="method-name">getTagDefinition</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getType" title="details" class="method-name">getType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#registerFile" title="details" class="method-name">registerFile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$cid</span>, <span class="var-type"><a href="../Swift_Message/Swift_Message_EmbeddedFile.html">Swift_Message_EmbeddedFile</a></span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#removeProtocol" title="details" class="method-name">removeProtocol</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$prot</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#removeTagDefinition" title="details" class="method-name">removeTagDefinition</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setEmbedLocalFiles" title="details" class="method-name">setEmbedLocalFiles</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$set</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setEmbedRemoteFiles" title="details" class="method-name">setEmbedRemoteFiles</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$set</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLocalFilePatternFormat" title="details" class="method-name">setLocalFilePatternFormat</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setRemoteFilePatternFormat" title="details" class="method-name">setRemoteFilePatternFormat</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTagDefinition" title="details" class="method-name">setTagDefinition</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$extensions</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodaddProtocol" id="addProtocol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addProtocol</span> (line <span class="line-number">169</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a new protocol which can be used to download files.</p>
+<p class="description"><p>Protocols should not include the &quot;://&quot; portion.  This method expects alphanumeric characters only.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addProtocol
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$prot</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prot</span><span class="var-description">: The protocol name (e.g. http or ftp)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddType" id="addType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addType</span> (line <span class="line-number">117</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a new MIME type defintion (or overwrite an existing one).</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ext</span><span class="var-description">: The extension (sans the dot)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: The MIME type (e.g. image/jpeg)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbeforeSendPerformed" id="beforeSendPerformed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">beforeSendPerformed</span> (line <span class="line-number">403</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Swift's BeforeSendListener required method.</p>
+<p class="description"><p>Runs just before Swift sends a message.  Here is where we do all the replacements.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			beforeSendPerformed
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Swift_Events/Swift_Events_SendEvent.html">Swift_Events_SendEvent</a></span>
+				<span class="var-name">$e</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclearCache" id="clearCache"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clearCache</span> (line <span class="line-number">393</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Empty out the cache of registered files.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clearCache
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodembedLocalFile" id="embedLocalFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">embedLocalFile</span> (line <span class="line-number">359</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Callback method for preg_replace().</p>
+<p class="description"><p>Embeds files which have been found during scanning.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The tag with it's path replaced with a CID</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			embedLocalFile
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$matches</span><span class="var-description">: Backreferences from preg_replace()</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodembedRemoteFile" id="embedRemoteFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">embedRemoteFile</span> (line <span class="line-number">317</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Callback method for preg_replace().</p>
+<p class="description"><p>Embeds files which have been found during scanning.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The tag with it's URL replaced with a CID</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			embedRemoteFile
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$matches</span><span class="var-description">: Backreferences from preg_replace()</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetEmbedLocalFiles" id="getEmbedLocalFiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEmbedLocalFiles</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if local files can be embedded, or false if not.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getEmbedLocalFiles
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetEmbedRemoteFiles" id="getEmbedRemoteFiles"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEmbedRemoteFiles</span> (line <span class="line-number">291</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if remote files can be embedded, or false if not.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getEmbedRemoteFiles
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLocalFilePattern" id="getLocalFilePattern"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLocalFilePattern</span> (line <span class="line-number">254</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the PCRE pattern for a local file based on the tag name.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLocalFilePattern
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag_name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag_name</span><span class="var-description">: The name of the tag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLocalFilePatternFormat" id="getLocalFilePatternFormat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLocalFilePatternFormat</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the sprintf() format string for the PCRE pattern to scan for remote files.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLocalFilePatternFormat
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetProtocols" id="getProtocols"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getProtocols</span> (line <span class="line-number">186</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a list of all registered protocols.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getProtocols
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRemoteFilePattern" id="getRemoteFilePattern"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRemoteFilePattern</span> (line <span class="line-number">237</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the PCRE pattern for a remote file based on the tag name.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRemoteFilePattern
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag_name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag_name</span><span class="var-description">: The name of the tag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRemoteFilePatternFormat" id="getRemoteFilePatternFormat"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRemoteFilePatternFormat</span> (line <span class="line-number">160</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the sprintf() format string for the PCRE pattern to scan for remote files.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRemoteFilePatternFormat
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTagDefinition" id="getTagDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTagDefinition</span> (line <span class="line-number">226</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a tag definition.</p>
+<p class="description"><p>Returns an array with indexes &quot;attributes&quot; and &quot;extensions&quot;.  Each element is an array listing the values within it.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getTagDefinition
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: The name of the tag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetType" id="getType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getType</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the MIME type based upon the extension.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ext</span><span class="var-description">: The extension (sans the dot).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregisterFile" id="registerFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">registerFile</span> (line <span class="line-number">272</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Register a file which has been downloaded so it doesn't need to be downloaded twice.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerFile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$cid</span>, <span class="var-type"><a href="../Swift_Message/Swift_Message_EmbeddedFile.html">Swift_Message_EmbeddedFile</a></span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$url</span><span class="var-description">: The remote URL</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$cid</span><span class="var-description">: The ID as attached in the message</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Swift_Message/Swift_Message_EmbeddedFile.html">Swift_Message_EmbeddedFile</a></span>
+				<span class="var-name">$file</span><span class="var-description">: The file object itself</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveProtocol" id="removeProtocol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeProtocol</span> (line <span class="line-number">178</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a protocol from the list of allowed protocols once added.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeProtocol
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$prot</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prot</span><span class="var-description">: The name of the protocol (e.g. http)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveTagDefinition" id="removeTagDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeTagDefinition</span> (line <span class="line-number">215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a tag definition for remote files.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeTagDefinition
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: The name of the tag</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEmbedLocalFiles" id="setEmbedLocalFiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEmbedLocalFiles</span> (line <span class="line-number">299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turn on or off local file embedding.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setEmbedLocalFiles
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$set</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEmbedRemoteFiles" id="setEmbedRemoteFiles"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEmbedRemoteFiles</span> (line <span class="line-number">283</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turn on or off remote file embedding.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setEmbedRemoteFiles
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$set</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLocalFilePatternFormat" id="setLocalFilePatternFormat"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLocalFilePatternFormat</span> (line <span class="line-number">130</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the PCRE pattern which finds -full- HTML tags and copies the path for a local file into a backreference.</p>
+<p class="description"><p>The pattern contains three %s replacements for sprintf().  First replacement is the tag name (e.g. img)  Second replacement is the attribute name (e.g. src)  Third replacement is the file extension (e.g. jpg)  This pattern should contain the full URL in backreference index 3.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLocalFilePatternFormat
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: sprintf() format string containing a PCRE regexp.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRemoteFilePatternFormat" id="setRemoteFilePatternFormat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setRemoteFilePatternFormat</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the PCRE pattern which finds -full- HTML tags and copies the URL for the remote file into a backreference.</p>
+<p class="description"><p>The pattern contains four %s replacements for sprintf().  First replacement is the tag name (e.g. img)  Second replacement is the attribute name (e.g. src)  Third replacement is the protocol (e.g. http)  Fourth replacement is the file extension (e.g. jpg)  This pattern should contain the full URL in backreference index 3.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRemoteFilePatternFormat
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: sprintf() format string containing a PCRE regexp.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTagDefinition" id="setTagDefinition"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTagDefinition</span> (line <span class="line-number">197</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add, or modify a tag definition.</p>
+<p class="description"><p>This affects how the plugins scans for files to download.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTagDefinition
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$extensions</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: The name of a tag to search for (e.g. img)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$attributes</span><span class="var-description">: The name of attributes to look for (e.g. src).  You can pass an array if there are multiple possibilities.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$extensions</span><span class="var-description">: A list of extensions to allow (sans dot). If there's only one you can just pass a string.</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:38 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

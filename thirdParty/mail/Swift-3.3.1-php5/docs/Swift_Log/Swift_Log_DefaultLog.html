@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Swift_Log_DefaultLog</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Swift_Log_DefaultLog</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Default Logger class</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Chris Corbyn &lt;<a href="mailto:chris@w3style.co.uk">chris@w3style.co.uk</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Swift---Log---DefaultLog.php.html">/Swift/Log/DefaultLog.php</a> (line <span class="field">20</span>)
+		</p>
+		
+				
+		<pre><a href="../Swift_Log/Swift_Log.html">Swift_Log</a>
+   |
+   --Swift_Log_DefaultLog</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#add" title="details" class="method-name">add</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">self::NORMAL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#dump" title="details" class="method-name">dump</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$return_only</span> = <span class="var-default">false</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodadd" id="add"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">add</span> (line <span class="line-number">33</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a log entry</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">self::NORMAL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$text</span><span class="var-description">: The text for this entry</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: The label for the type of entry</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Swift_Log/Swift_Log.html#methodadd">Swift_Log::add()</a></dt>
+						<dd>Add a new entry to the log</dd>
+					</dl>
+			
+	</div>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clear</span> (line <span class="line-number">51</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Empty the log</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Swift_Log/Swift_Log.html#methodclear">Swift_Log::clear()</a></dt>
+						<dd>Empty the log contents</dd>
+					</dl>
+			
+	</div>
+<a name="methoddump" id="dump"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dump</span> (line <span class="line-number">42</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dump the contents of the log to the browser.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dump
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$return_only</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$return_only</span><span class="var-description">: True if the string should be returned rather than output.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Swift_Log/Swift_Log.html#methoddump">Swift_Log::dump()</a></dt>
+						<dd>Dump the contents of the log to the browser.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Swift_Log/Swift_Log.html">Swift_Log</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodadd">Swift_Log::add()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodaddFailedRecipient">Swift_Log::addFailedRecipient()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodclear">Swift_Log::clear()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methoddump">Swift_Log::dump()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodgetFailedRecipients">Swift_Log::getFailedRecipients()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodgetLogLevel">Swift_Log::getLogLevel()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodgetMaxSize">Swift_Log::getMaxSize()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodhasLevel">Swift_Log::hasLevel()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodisEnabled">Swift_Log::isEnabled()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodsetLogLevel">Swift_Log::setLogLevel()</a></span><br>
+													<span class="method-name"><a href="../Swift_Log/Swift_Log.html#methodsetMaxSize">Swift_Log::setMaxSize()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Swift_Log/Swift_Log.html">Swift_Log</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constCOMMAND">Swift_Log::COMMAND</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constERROR">Swift_Log::ERROR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constLOG_ERRORS">Swift_Log::LOG_ERRORS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constLOG_EVERYTHING">Swift_Log::LOG_EVERYTHING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constLOG_FAILURES">Swift_Log::LOG_FAILURES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constLOG_NETWORK">Swift_Log::LOG_NETWORK</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constLOG_NOTHING">Swift_Log::LOG_NOTHING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constNORMAL">Swift_Log::NORMAL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Swift_Log/Swift_Log.html#constRESPONSE">Swift_Log::RESPONSE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 24 Aug 2007 13:07:34 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.1</a>
+	</p>
+	</div></body>
+</html>

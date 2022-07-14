@@ -1,0 +1,1 @@
+Thank you for using the PHP Lite Framework (http://phplitefw.sourceforge.net/)

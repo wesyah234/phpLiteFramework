@@ -1,0 +1,31 @@
+/** {margin:0; padding:0; outline:0}
+body {font:11px Verdana,Arial; margin:25px; background:#fff url(TinyTableV3/images/bg.gif) repeat-x} */
+
+/**We converted all of these to classes to allow for multiple "tinytables" on a page*/
+/* .tinytable-tablewrapper {/* margin:0 auto } */
+.tinytable-tablewrapper {padding-top:4px;padding-left:0px}
+.tinytable-tableheader {height:50px}
+.tinytable-search {float:left; padding:6px; border:1px solid #c6d5e1;margin-top:4px}
+.tinytable-search select {float:left; width:125px; margin-bottom:0px}
+.tinytable-search input  {float:left; width:225px; margin-bottom:0px; margin-left:5px}
+.tinytable-toptablenav {height:30px}
+.tinytable-tablenav {float:left;padding-top:6px; padding-left:2px;}
+.tinytable-tablenav img {cursor:pointer}
+.tinytable-tablenav div {float:left; margin-right:15px}
+.tinytable-details div {float:left;padding-top:6px;padding-bottom:6px;padding-left:1px; font-size:14px}
+.tinytable-details .specialleft {margin-left:2px}
+.tinytable {border-left:1px solid #c6d5e1;/*border-top:1px solid; border-bottom:none; border-width:1px; border-spacing:0px; border-style:solid*/} 
+.tinytable th {/*background:url(TinyTableV3/images/header-bg.gif);*/background-color:#b3c3d0; text-align:left; border:1px solid #c6d5e1;/*border-right:none;*/ padding:1px; padding-left:5px}
+.tinytable th h3 {margin:0; font-size:14px; padding:6px 8px 8px; line-height:10px}
+.tinytable td {padding:1px 4px; border-bottom:1px solid #c6d5e1; border-right:1px solid #c6d5e1;}
+.tinytable .head h3 {background:url(TinyTableV3/images/sort.gif) 7px center no-repeat; cursor:pointer; padding-left:18px}
+/*.tinytable .desc, .sortable .asc {background:url(TinyTableV3/images/header-selected-bg.gif)}*/
+.tinytable .desc h3 {background:url(TinyTableV3/images/desc.gif) 7px center no-repeat; cursor:pointer; padding-left:18px}
+.tinytable .asc h3 {background:url(TinyTableV3/images/asc.gif) 7px  center no-repeat; cursor:pointer; padding-left:18px}
+.tinytable .head:hover, .tinytable .desc:hover, .tinytable .asc:hover, .tinytable th h3:hover {color:#fff}
+.tinytable .evenrow td {background:#fff}
+.tinytable .oddrow td {background:#ecf2f6}
+.tinytable-tablefooter {height:30px; margin-top:10px}
+.tinytable-tablefooter div {float:left}
+.tinytable-tablefooter select {width:50px; margin-right:3px}
+#tinytable-selectedrow td {background:#c6d5e1}
