@@ -1,0 +1,18 @@
+{
+  "config": {
+    "platform": {
+      "php": "7.3"
+    }
+  },
+  "require": {
+    "php": ">=7.3"
+  },
+  "require": {
+    "symfony/mailer": "*",
+    "phpoffice/phpspreadsheet": "*",
+    "adodb/adodb-php": "^5.22",
+    "tecnickcom/tcpdf": "*",
+    "campaignmonitor/createsend-php": "*",
+    "nesbot/carbon": "*"
+  }
+}
