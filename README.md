@@ -1,0 +1,2 @@
+# phpLiteFramework
+PHP Lite Framework
