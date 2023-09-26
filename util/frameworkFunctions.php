@@ -2705,6 +2705,9 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
     $message->from(new Address($fromAddress, $fromName));
 
     foreach ($toNamesAndAddresses as $email => $name) {
+      if (is_numeric($email)) {
+        $email = $name;
+      }
       $message->addTo(new Address($email, $name));
     }
     if ($html == NULL) {
@@ -2725,7 +2728,7 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
     $message->returnPath($replyToBounceAddress);
     $mailer->send($message);
   } catch (\Exception $e) {
-    logError("There was a problem sending mail :".$e->getMessage());
+    logError("There was a problem sending mail :".$e->getMessage(). "Exception stack trace: ".goodNl2br($e->getTraceAsString()));
   }
 }
 
