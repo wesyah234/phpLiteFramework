@@ -2677,6 +2677,12 @@ function sendMailMultipleCombined($replyToBounceAddress, $fromAddress, $fromName
   return sendMail_private($replyToBounceAddress, $fromAddress, $fromName, processEmailToNames_private($toNamesAndAddresses), $subject, $text, $html, $attachmentFilename);
 }
 
+/**
+ * found: https://stackoverflow.com/questions/5341168/best-way-to-make-links-clickable-in-block-of-text
+ */
+function makeLinksClickable($text){
+  return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
+}
 
 /**
  * internal method used by sendMail wrapper methods, don't call directly.
