@@ -110,13 +110,6 @@ if (!function_exists('getServerName')) {
 
 }
 
-// fix some weird timezone issues that are cropping up with
-// php5
-$localTimezone = ini_get('date.timezone');
-if (empty($localTimezone)) {
-  ini_set('date.timezone', 'America/Chicago');
-}
-
 /**
  * Simple function to replicate PHP 5 behaviour.  Provides
  * fine grained access to the system time, for calculation
@@ -178,6 +171,16 @@ function plfIncludeStage2($projectDir) {
 function plfGo($projectDir) {
   $start = microtime_float();
   plfIncludeStage1($projectDir);
+
+  // fix some weird timezone issues that are cropping up with
+// php5
+  if (PHP_TZ_OVERRIDE_ONLY_IF_NOT_SET && empty(ini_get('date.timezone'))) {
+    ini_set('date.timezone', PHP_TZ_OVERRIDE_ONLY_IF_NOT_SET);
+  }
+  if (PHP_TZ_OVERRIDE_ALWAYS) {
+    ini_set('date.timezone', PHP_TZ_OVERRIDE_ALWAYS);
+  }
+
 
 
 // NOTE: we aren't including Zend Framework in the PHP Lite Framework anymore.

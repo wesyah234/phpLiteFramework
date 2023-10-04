@@ -8,6 +8,11 @@
  *
  */
 
+// if set to a valid PHP timezone value (https://www.php.net/manual/en/timezones.php), the php timezone setting will be overriden, regardless of whether it's already set in the php environment (via php.ini)  default is to have this false and the other one set to America/Chicago which matches the behavior of the framework prior to making this configurable.  Individual projects can change to using PHP_TZ_OVERRIDE_ALWAYS to have consistent timezone behaviour regardless of php.ini settings.
+setDefault('PHP_TZ_OVERRIDE_ALWAYS', false);
+// if set to a valid PHP timezone value (https://www.php.net/manual/en/timezones.php), the php timezone setting will be overriden, but only if not already set in the php environment (via php.ini)
+setDefault('PHP_TZ_OVERRIDE_ONLY_IF_NOT_SET', 'America/Chicago');
+
 //
 // set to true to use clean urls without needing any mod_rewrite functionality
 // if false, makeUrl ('mymodule', 'myfunction', array('parm1'=>'value1', 'parm2'=>'val2'))
