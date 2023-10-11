@@ -2625,7 +2625,7 @@ function validEmail($email) {
  * array('bill@example.com','sue@example.com')
  * array('bill@example.com'=>'Bill','sue@example.com'=>'Sue')
  *
- * @return string if there are any errors during send
+ * Will logError if any problems during the send.
  */
 function sendMailMultipleSeparate($replyToBounceAddress, $fromAddress, $fromName, $toNamesAndAddresses, $subject, $text, $html = NULL, $attachmentFilename = null) {
 
@@ -2633,10 +2633,8 @@ function sendMailMultipleSeparate($replyToBounceAddress, $fromAddress, $fromName
 
   // then with that array we built, send a separate email to each recipient
   foreach ($toNamesAndAddresses as $toAddress => $toName) {
-    $returnCode = '';
-    $returnCode .= sendMail($replyToBounceAddress, $fromAddress, $fromName, $toAddress, $toName, $subject, $text, $html, $attachmentFilename);
+    sendMail($replyToBounceAddress, $fromAddress, $fromName, $toAddress, $toName, $subject, $text, $html, $attachmentFilename);
   }
-  return $returnCode;
 }
 
 /**
@@ -2669,12 +2667,12 @@ function processEmailToNames_private($toNamesAndAddresses) {
  * array('bill@example.com','sue@example.com')
  * array('bill@example.com'=>'Bill','sue@example.com'=>'Sue')
  *
- * @return string if there are any errors during send
+ * Will logError if any problems during the send.
  */
 function sendMailMultipleCombined($replyToBounceAddress, $fromAddress, $fromName, $toNamesAndAddresses, $subject, $text, $html = NULL, $attachmentFilename = null) {
 
   // then with that array we built, call internal private send mail function that takes an array of names and addresses directly
-  return sendMail_private($replyToBounceAddress, $fromAddress, $fromName, processEmailToNames_private($toNamesAndAddresses), $subject, $text, $html, $attachmentFilename);
+  sendMail_private($replyToBounceAddress, $fromAddress, $fromName, processEmailToNames_private($toNamesAndAddresses), $subject, $text, $html, $attachmentFilename);
 }
 
 /**
@@ -2713,6 +2711,9 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
     foreach ($toNamesAndAddresses as $email => $name) {
       if (is_numeric($email)) {
         $email = $name;
+      }
+      if (!isReallySet($email)) {
+        logError("Problem sending mail: no email set for name: $name in the array of toNamesAndAddresses");
       }
       $message->addTo(new Address($email, $name));
     }
@@ -2770,11 +2771,11 @@ function removeBlankLinesInString(&$string) {
 /**
  * Sends a single email to a single person.  If you don't know their name, leave $toName blank.
  * To send mail to multiple recipients, see sendMailMultipleCombined and sendMailMultipleSeparate
- * @return string if there are any errors during send
+ * Will logError if any problems during the send.
  */
 function sendMail($replyToBounceAddress, $fromAddress, $fromName, $toAddress, $toName, $subject, $text, $html = NULL, $attachmentFilename = null) {
 
-  return sendMail_private($replyToBounceAddress, $fromAddress, $fromName, array($toAddress => $toName), $subject, $text, $html, $attachmentFilename);
+  sendMail_private($replyToBounceAddress, $fromAddress, $fromName, array($toAddress => $toName), $subject, $text, $html, $attachmentFilename);
 
 }
 
