@@ -989,14 +989,15 @@ function makeAjaxLink($linkName, $url, $callbackDivName = '', $label = null) {
  * $checked: initial state (true = checked, false = unchecked)
  */
 function makeAjaxCheckbox($url, $checked, $callbackDivName = '', $label = NULL, $paramName = '') {
+  // the hidden div helps for table sorting.  allows us to sort and show all checked ones together.
   if (isset($label)) {
     static $counter;
     $counter++;
     $id = "$label-$counter";
-    return '<input type="checkbox" autocomplete="off" name="'.$id.'" id="'.$id.'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" '.($checked ? 'checked="yes"' : '').'><label for="'.$id.'">'.$label.'</label></input>';
+    return "<div hidden >$checked</div>".'<input type="checkbox" '.($checked ? 'checked="yes"' : '').' autocomplete="off" name="'.$id.'" id="'.$id.'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" ><label for="'.$id.'">'.$label.'</label></input>';
   }
   else {
-    return '<input type="checkbox" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" '.($checked ? 'checked="yes"' : '').'/>';
+    return "<div hidden >$checked</div>".'<input type="checkbox"  '.($checked ? 'checked="yes"' : '').' onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" >'.'</>';
   }
 }
 
