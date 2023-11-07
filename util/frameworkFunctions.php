@@ -1961,6 +1961,21 @@ function calculateDOB($age) {
   return date('m/d/Y', $newDate);
 }
 
+/**
+ * thanks to: https://www.php.net/manual/en/function.sleep.php#118635
+ *
+ * Delays execution of the script by the given time.
+ * @param mixed $time Time to pause script execution. Can be expressed
+ * as an integer or a decimal.
+ * @example msleep(1.5); // delay for 1.5 seconds
+ * @example msleep(.1); // delay for 100 milliseconds or a 10th of a second
+ */
+function msleep($time)
+{
+  usleep($time * 1000000);
+}
+
+
 function parseDate($date) {
   $toReturn = array();
   if (strpos($date, "/") !== false) {
