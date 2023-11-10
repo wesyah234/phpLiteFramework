@@ -994,7 +994,7 @@ function makeAjaxCheckbox($url, $checked, $callbackDivName = '', $label = NULL, 
     static $counter;
     $counter++;
     $id = "$label-$counter";
-    return "<div hidden >$checked</div>".'<input type="checkbox" '.($checked ? 'checked="yes"' : '').' autocomplete="off" name="'.$id.'" id="'.$id.'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" ><label for="'.$id.'">'.$label.'</label></input>';
+    return "<div hidden>$checked</div>".'<input type="checkbox" '.($checked ? 'checked="yes"' : '').' autocomplete="off" name="'.$id.'" id="'.$id.'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" ><label for="'.$id.'">'.$label.'</label></input>';
   }
   else {
     return "<div hidden >$checked</div>".'<input type="checkbox"  '.($checked ? 'checked="yes"' : '').' onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" >'.'</>';
