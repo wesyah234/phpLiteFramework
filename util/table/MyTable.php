@@ -369,7 +369,7 @@ class PLF_Table
       $this->rows .= '</td>';
     }
     $this->numCells = count($rowArray); // save off count for the spacer
-    $this->rows .= '</tr>';
+    $this->rows .= '</tr>'."\n";
   }
 
   /**
