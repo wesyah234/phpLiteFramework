@@ -2181,6 +2181,14 @@ function newTable($heading = null) {
   return new PLF_Table($heading);
 }
 
+function newTable2($heading = null) {
+  include_once 'table/MyTable2.php';
+  if (!is_array($heading)) {
+    $heading = func_get_args();
+  }
+  return new PLF_Table2($heading);
+}
+
 function encrypt1($text) {
   return str_rot13(base64_encode(str_rot13($text)));
 }

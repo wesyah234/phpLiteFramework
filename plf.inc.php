@@ -448,7 +448,9 @@ function plfGo($projectDir) {
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/lib/prototype.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/src/scriptaculous.js" type="text/javascript"></script>';
   }
   if (USE_JQUERY) {
-    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-1.12.4.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script><script>jQuery.noConflict()</script>';
+    //$headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-1.12.4.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script><script>jQuery.noConflict()</script>';
+
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>';
   }
   if (getGlobalVar('usingDropzone')) {
     setHeadContent('<script type="text/javascript" src="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.js'.'"></script>');
