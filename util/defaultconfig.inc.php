@@ -41,6 +41,8 @@ setDefault('EMBED_FRAMEWORK_IN_ANOTHER_WEBAPP', false);
 setDefault('USE_PROTOTYPE_SCRIPTACULOUS', false);
 // should we include the jquery framework on every page?
 setDefault('USE_JQUERY', true);
+// should we use include the bootstrap framework on every page?
+setDefault('USE_BOOTSTRAP', true);
 
 setDefault('STATUS_MESSAGE_DIV_CLASS', 'plf_status_red');
 

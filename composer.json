@@ -13,6 +13,7 @@
     "adodb/adodb-php": "^5.22",
     "tecnickcom/tcpdf": "*",
     "campaignmonitor/createsend-php": "*",
-    "nesbot/carbon": "*"
+    "nesbot/carbon": "*",
+    "phpoffice/phpword":"*"
   }
 }

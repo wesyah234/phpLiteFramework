@@ -445,25 +445,28 @@ function plfGo($projectDir) {
 
   // grab scriptaculous/prototype JS:
   if (USE_PROTOTYPE_SCRIPTACULOUS) {
-    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/lib/prototype.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/src/scriptaculous.js" type="text/javascript"></script>';
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/lib/prototype.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/src/scriptaculous.js" type="text/javascript"></script>'."\n";
   }
   if (USE_JQUERY) {
-    //$headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-1.12.4.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script><script>jQuery.noConflict()</script>';
-
-    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>';
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>'."\n";
+  }
+  if (USE_BOOTSTRAP) {
+    // bs3 3.4.1
+    $headContent .= '<link href="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" >'."\n";
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/js/bootstrap.min.js"></script>'."\n";
   }
   if (getGlobalVar('usingDropzone')) {
-    setHeadContent('<script type="text/javascript" src="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.js'.'"></script>');
-    setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/basic.css" type="text/css" rel="stylesheet">');
-    setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.css" type="text/css" rel="stylesheet">');
+    setHeadContent('<script type="text/javascript" src="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.js'.'"></script>'."\n");
+    setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/basic.css" type="text/css" rel="stylesheet">'."\n");
+    setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.css" type="text/css" rel="stylesheet">'."\n");
   }
 
   // reference the couple of helper js funcs defined in the framework:
   // note that some/all of these functions need jquery to be included, so don't turn
   // it off by setting USE_JQUERY to false if you intend to use the functions in plf.js
-  $headContent .= '<script src="'.$frameworkUrl.'/util/javascript/plf.js" type="text/javascript"></script>';
+  $headContent .= '<script src="'.$frameworkUrl.'/util/javascript/plf.js" type="text/javascript"></script>'."\n";
   // copy to clipboard functionality from (https://clipboardjs.com/)
-  $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/clipboardjs/clipboard.min.js" type="text/javascript"></script>';
+  $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/clipboardjs/clipboard.min.js" type="text/javascript"></script>'."\n";
   // NOTE: had to move this cool calendar javascript loading to the head of the whole page so that if we had a 
   // // date control on a form that was pulled via ajax it would still work and have the JS available.
   // background grey stuff below is a hack way to fix the calendar.. in chrome on mac, the calendar month is black words on black background!  change the background to grey explicitly to fix for now.. later, maybe switch to a jquery date popup or some other more modern date picker
@@ -473,17 +476,17 @@ function plfGo($projectDir) {
   <style>.calendar thead .title {
     background: grey;
 }</style>
-<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/dhtmlCalendar/jscalendar-1.0/calendar.js'.'"></script><script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/dhtmlCalendar/jscalendar-1.0/lang/calendar-en.js'.'"></script><script type="text/javascript" src="'.'project/conf/calendar-setup.js'.'"></script>';
+<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/dhtmlCalendar/jscalendar-1.0/calendar.js'.'"></script><script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/dhtmlCalendar/jscalendar-1.0/lang/calendar-en.js'.'"></script><script type="text/javascript" src="'.'project/conf/calendar-setup.js'.'"></script>'."\n";
 
   // set up a style on the acronym tag since IE doesn't apply the dotted underline
   //to the <acronym> tagged page elements, like FF does...
   // and also set the plf_status_red css style that is now used instead of hard coding the red style for the status message
   // this will allow projects to use a different css style for the status message while still getting the default
   // red behavior.
-  $headContent .= '<style type="text/css">acronym{border-bottom: #000 1px dotted} .plf_status_red {color:red;}</style>';
+  $headContent .= '<style type="text/css">acronym{border-bottom: #000 1px dotted} .plf_status_red {color:red;}</style>'."\n";
 
   if (1 == getGlobalVar('usingOverlib')) {
-    $headContent .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/overlib/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>';
+    $headContent .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/overlib/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>'."\n";
   }
   $headContent .= getHeadContent();
   $newStuff = str_replace('{{headContent}}', $headContent ?? '', $newStuff);
