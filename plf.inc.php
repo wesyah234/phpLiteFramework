@@ -448,7 +448,9 @@ function plfGo($projectDir) {
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/lib/prototype.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/src/scriptaculous.js" type="text/javascript"></script>'."\n";
   }
   if (USE_JQUERY) {
+    // here we bring in jquery and also jquery-ui (the ui piece can be used for the drag/drop sorting features)
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>'."\n";
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery-ui/jquery-ui-1.13.2.min.js" ></script>'."\n";
   }
   if (USE_BOOTSTRAP) {
     // bs3 3.4.1
