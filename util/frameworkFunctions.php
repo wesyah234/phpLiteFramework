@@ -2899,10 +2899,10 @@ function getArrayValueAtIndex($array, $index) {
 }
 
 function getArrayValuesAtIndex($array, $indicesDelimited, $outputDelimiter) {
-  // the data stored in the database for MultipleChoice type fields populated by the 
+  // the data stored in the database for MultipleChoice type fields populated by the
   // framework will be like this |33|39|630|
   // and so we need to trim off the leading and trailing Pipe char first
-  $indicesDelimited = trim($indicesDelimited, '|');
+  $indicesDelimited = trim($indicesDelimited ?? '', '|');
   // then convert to an array:
   $indices = explode("|", $indicesDelimited);
   $toReturn = array();
