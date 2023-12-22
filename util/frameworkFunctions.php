@@ -2181,12 +2181,12 @@ function newTable($heading = null) {
   return new PLF_Table($heading);
 }
 
-function newTable2($heading = null) {
-  include_once 'table/MyTable2.php';
+function newTableOrig($heading = null) {
+  include_once 'table/MyTableOrig.php';
   if (!is_array($heading)) {
     $heading = func_get_args();
   }
-  return new PLF_Table2($heading);
+  return new PLF_Table_orig($heading);
 }
 
 function encrypt1($text) {

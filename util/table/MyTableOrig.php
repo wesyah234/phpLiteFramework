@@ -30,7 +30,7 @@
  *
  */
 
-class PLF_Table2
+class PLF_Table_orig
 {
 
   var $tableAttributes;
@@ -69,7 +69,7 @@ class PLF_Table2
     $this->numCells = count($heading); // save off count for the spacer
   }
 
-  function PLF_Table($heading) {
+  function PLF_Table_orig($heading) {
     self::__construct($heading);
   }
 
@@ -500,35 +500,35 @@ class PLF_Table2
     $this->callbackDivName = $callbackDivName;
   }
 
-//  function getTablenav() {
-//    $frameworkUrl = getFrameworkUrl();
-//    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
-//      <div>Page <span id="'.$this->tableId.'currentpage"></span> of <span id="'.$this->tableId.'totalpages"></span>
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
-//      </div>
-//      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
-//      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
-//    </div>
-//    ';
-//  }
+  function getTablenav() {
+    $frameworkUrl = getFrameworkUrl();
+    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
+      <div>Page <span id="'.$this->tableId.'currentpage"></span> of <span id="'.$this->tableId.'totalpages"></span>
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
+      </div>
+      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
+      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
+    </div>
+    ';
+  }
 
-//  function getTablenavArrowsOnly() {
-//    $frameworkUrl = getFrameworkUrl();
-//    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
-//      <div>
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
-//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
-//      </div>
-//      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
-//      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
-//    </div>
-//    ';
-//  }
+  function getTablenavArrowsOnly() {
+    $frameworkUrl = getFrameworkUrl();
+    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
+      <div>
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
+        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
+      </div>
+      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
+      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
+    </div>
+    ';
+  }
 
   /**
    * return the html representation of the table
@@ -541,33 +541,32 @@ class PLF_Table2
     $frameworkUrl = getFrameworkUrl();
     // only include the link to the css once! (check for tableid = table1)
     if ($this->sortableTable && $this->tableId == 'table1') {
-//      setHeadContent('<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/tinyTable/tinyTableCustomStyle.css"/>');
-      setHeadContent('<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />');
+      setHeadContent('<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/tinyTable/tinyTableCustomStyle.css"/>');
     }
-  $toReturn = '';
-//    if ($this->sortableTable) {
-////      $toReturn = '<div id="1" class="display">';
-//
-//      $searchAddition = '';
-//      if (!$this->searchable) {
-//        $searchAddition = ' style="display:none"';
-//      }
-//      $toReturn .= '<div id="2" class="tinytable-tableheader"'.$searchAddition.'>';
-//      $toReturn .= '<div id="3" class="tinytable-search">
-//        <select style="display:none" id="'.$this->tableId.'columns" onchange="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')"></select>
-//        <input type="text" placeholder="Filter by..." id="'.$this->tableId.'query" onkeyup="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')" />
-//      </div> <!-- 3 close -->';
-//      $toReturn .= '</div> <!-- 2 close -->';
-////      if (!empty($this->rows)) {
-////        $toReturn .= '<div id="4" class="tinytable-toptablenav">';
-////        $toReturn .= $this->getTablenav();
-////        $toReturn .= '<span class="tinytable-details"><div id="5">Records <span id="'.$this->tableId.'startrecord"></span>-<span id="'.$this->tableId.'endrecord"></span> of <span id="'.$this->tableId.'totalrecords"></span> </div> <!-- 5 close --></span>';
-////        $toReturn .= '</div> <!-- 4 close -->'; // -end "tableheader"
-////      }
-//    }
+
+    if ($this->sortableTable) {
+      $toReturn = '<div id="1" class="tinytable-tablewrapper">';
+
+      $searchAddition = '';
+      if (!$this->searchable) {
+        $searchAddition = ' style="display:none"';
+      }
+      $toReturn .= '<div id="2" class="tinytable-tableheader"'.$searchAddition.'>';
+      $toReturn .= '<div id="3" class="tinytable-search">
+        <select style="display:none" id="'.$this->tableId.'columns" onchange="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')"></select>  
+        <input type="text" placeholder="Filter by..." id="'.$this->tableId.'query" onkeyup="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')" />
+      </div> <!-- 3 close -->';
+      $toReturn .= '</div> <!-- 2 close -->';
+      if (!empty($this->rows)) {
+        $toReturn .= '<div id="4" class="tinytable-toptablenav">';
+        $toReturn .= $this->getTablenav();
+        $toReturn .= '<span class="tinytable-details"><div id="5">Records <span id="'.$this->tableId.'startrecord"></span>-<span id="'.$this->tableId.'endrecord"></span> of <span id="'.$this->tableId.'totalrecords"></span> </div> <!-- 5 close --></span>';
+        $toReturn .= '</div> <!-- 4 close -->'; // -end "tableheader"
+      }
+    }
     // width="100%" on the table fixes the issue with the table shifting to the right when browser is wide
     if ($this->sortableTable) {
-      $toReturn .= '<table width="100%" '.$this->tableAttributes.' id="'.$this->tableId.'" class="display">';
+      $toReturn .= '<table width="100%" '.$this->tableAttributes.' id="'.$this->tableId.'" class="tinytable">';
     }
     else {
       $toReturn = '<table width="100%" '.$this->tableAttributes.'>';
@@ -612,48 +611,40 @@ class PLF_Table2
 //      $toReturn .= '</div>'; // -end "tablefooter"
 
 
-     // $toReturn .= '</div> <!-- 1 close -->'; // -end "tablewrapper"
+      $toReturn .= '</div> <!-- 1 close -->'; // -end "tablewrapper"
 
-//      $initialPagingSize = $this->entriesPerPage;
-//
-//      $pagingStuff = '';
-//      if ($this->entriesPerPage > 0) {
-//        $pagingStuff = 'paginate:true,size:'.$this->entriesPerPage.',';
-//      }
-//      else {
-//        $pagingStuff = 'paginate:true,size:10000000000000000,';
-//      }
+      $initialPagingSize = $this->entriesPerPage;
 
-//      //$toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/script.js"></script>
-//<script type="text/javascript">
-//var '.$this->tableId.'sorter = new TINY.table.sorter(\''.$this->tableId.'sorter\', \''.$this->tableId.'\', {
-//headclass:\'head\',
-//ascclass:\'asc\',
-//descclass:\'desc\',
-//evenclass:\'evenrow\',
-//oddclass:\'oddrow\',
-//evenselclass:\'evenselected\',
-//oddselclass:\'oddselected\','.$pagingStuff.'
-//colddid:\''.$this->tableId.'columns\',
-//currentid:\''.$this->tableId.'currentpage\',
-//totalid:\''.$this->tableId.'totalpages\',
-//startingrecid:\''.$this->tableId.'startrecord\',
-//endingrecid:\''.$this->tableId.'endrecord\',
-//totalrecid:\''.$this->tableId.'totalrecords\',
-//hoverid:\'tinytable-selectedrow\',
-//pageddid:\''.$this->tableId.'pagedropdown\',
-//navid:\''.$this->tableId.'nav\',
-//sortdir:1,
-//init:true  });
-//</script>';
+      $pagingStuff = '';
+      if ($this->entriesPerPage > 0) {
+        $pagingStuff = 'paginate:true,size:'.$this->entriesPerPage.',';
+      }
+      else {
+        $pagingStuff = 'paginate:true,size:10000000000000000,';
+      }
 
-//      $toReturn .= '<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>';
-//      $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\'); </script>';
-
-      setHeadContent('<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>');
-      $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\'); </script>';
-
-
+      $toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/script.js"></script> 
+<script type="text/javascript">
+var '.$this->tableId.'sorter = new TINY.table.sorter(\''.$this->tableId.'sorter\', \''.$this->tableId.'\', {
+headclass:\'head\',
+ascclass:\'asc\',
+descclass:\'desc\',
+evenclass:\'evenrow\',
+oddclass:\'oddrow\',
+evenselclass:\'evenselected\',
+oddselclass:\'oddselected\','.$pagingStuff.'
+colddid:\''.$this->tableId.'columns\',
+currentid:\''.$this->tableId.'currentpage\',
+totalid:\''.$this->tableId.'totalpages\',
+startingrecid:\''.$this->tableId.'startrecord\',
+endingrecid:\''.$this->tableId.'endrecord\',
+totalrecid:\''.$this->tableId.'totalrecords\',
+hoverid:\'tinytable-selectedrow\',
+pageddid:\''.$this->tableId.'pagedropdown\',
+navid:\''.$this->tableId.'nav\',
+sortdir:1,
+init:true  });
+</script>';
     }
 
     return $toReturn;

@@ -447,10 +447,19 @@ function plfGo($projectDir) {
   if (USE_PROTOTYPE_SCRIPTACULOUS) {
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/lib/prototype.js" type="text/javascript"></script><script src="'.$frameworkUrl.'/thirdParty/scriptaculous/scriptaculous-js-1.9.0/src/scriptaculous.js" type="text/javascript"></script>'."\n";
   }
-  if (USE_JQUERY) {
+
+  if (USE_JQUERY || getGlobalVar('usingFancyTable')) {
+    if (!USE_JQUERY) {
+      $headContent .= "\n<!--NOTE: phpLiteFramework is including jquery here even through the project specified USE_JQUERY=false, because the project also is using the setFancy setting on a table -->\n";
+    }
     // here we bring in jquery and also jquery-ui (the ui piece can be used for the drag/drop sorting features)
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>'."\n";
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/jquery-ui/jquery-ui-1.13.2.min.js" ></script>'."\n";
+  }
+  // this MUST be after the inclusion of the jquery js, or we will get the "jQuery is not defined" error
+  if (getGlobalVar('usingFancyTable')) {
+    $headContent .='<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.css" />';
+    $headContent .='<script src="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.js"></script>';
   }
   if (USE_BOOTSTRAP) {
     // bs3 3.4.1
@@ -462,6 +471,7 @@ function plfGo($projectDir) {
     setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/basic.css" type="text/css" rel="stylesheet">'."\n");
     setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.css" type="text/css" rel="stylesheet">'."\n");
   }
+
 
   // reference the couple of helper js funcs defined in the framework:
   // note that some/all of these functions need jquery to be included, so don't turn

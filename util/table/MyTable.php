@@ -30,8 +30,7 @@
  *
  */
 
-class PLF_Table
-{
+class PLF_Table {
 
   var $tableAttributes;
   var $rows;
@@ -226,7 +225,7 @@ class PLF_Table
 
   function addSpacer($value = '&nbsp;') {
     $this->rows .= '<tr>';
-    for ($i=0; $i < $this->numCells; $i++) {
+    for ($i = 0; $i < $this->numCells; $i++) {
       $this->rows .= '<td style="text-align:center">'.$value.'</td>';
     }
     $this->rows .= '</tr>';
@@ -390,7 +389,7 @@ class PLF_Table
     header("Cache-Control: no-cache, must-revalidate");
     header("Pragma: no-cache");
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+    header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
 
     $toReturn = '';
     if ($withHeader) {
@@ -439,7 +438,7 @@ class PLF_Table
     header("Cache-Control: no-cache, must-revalidate");
     header("Pragma: no-cache");
     header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+    header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
 
     if ($withHeader) {
       $rows[] = $this->heading;
@@ -464,16 +463,20 @@ class PLF_Table
 
 
   /*
-   * Set this table to be sortable, pagable, and optionally, searchable based on tinytable http://www.scriptiny.com/2009/11/advanced-javascript-table-sorter
-   * Update 2021, this javascript table sorter thingy seems to be offline
+   * Set this table to be sortable, pagable, and optionally, searchable based on jquery datatables: https://datatables.net/
+   * NOTE: the framework allows one to set USE_JQUERY to false, but if that is done, it will be included anyway
+   * if you call setFancy on a table, because jquery is necessary for datatables to work properly. USE_JQUERY defaults to true if not set
+   * NOTE 2: the javascript behind this fancy table was changed from the defunct tinytable (http://www.scriptiny.com/2009/11/advanced-javascript-table-sorter), to the currently available datatables in Dec 2023, we tried to make it as compatible as possible with the tinytable
    * $searchable - set to true to enable a filter search box for live searching of the table
    * $entriesPerPage - how many rows to show per page - set to 0 to disable pagination
    */
 
-  function setFancy($searchable = true, $entriesPerPage = 50) {
-    $this->sortableTable = TRUE;
+  function setFancy($searchable = true, $entriesPerPage = null) {
+    $this->sortableTable = TRUE; // this drives all the addition of javascript
+    // this is passed in as configurable options to the javascript datatable constructor
     $this->searchable = $searchable;
     $this->entriesPerPage = $entriesPerPage;
+    setGlobalVar('usingFancyTable', true);
   }
 
   /**
@@ -500,35 +503,35 @@ class PLF_Table
     $this->callbackDivName = $callbackDivName;
   }
 
-  function getTablenav() {
-    $frameworkUrl = getFrameworkUrl();
-    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
-      <div>Page <span id="'.$this->tableId.'currentpage"></span> of <span id="'.$this->tableId.'totalpages"></span>
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
-      </div>
-      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
-      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
-    </div>
-    ';
-  }
+//  function getTablenav() {
+//    $frameworkUrl = getFrameworkUrl();
+//    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
+//      <div>Page <span id="'.$this->tableId.'currentpage"></span> of <span id="'.$this->tableId.'totalpages"></span>
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
+//      </div>
+//      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
+//      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
+//    </div>
+//    ';
+//  }
 
-  function getTablenavArrowsOnly() {
-    $frameworkUrl = getFrameworkUrl();
-    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
-      <div>
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
-        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
-      </div>
-      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
-      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
-    </div>
-    ';
-  }
+//  function getTablenavArrowsOnly() {
+//    $frameworkUrl = getFrameworkUrl();
+//    return '<div class="tinytable-tablenav" id="'.$this->tableId.'nav">
+//      <div>
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/first.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1,true)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/previous.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(-1)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/next.gif" width="16" height="16" alt="First Page" onclick="'.$this->tableId.'sorter.move(1)" />
+//        <img src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/images/last.gif" width="16" height="16" alt="Last Page" onclick="'.$this->tableId.'sorter.move(1,true)" />
+//      </div>
+//      <div><select id="'.$this->tableId.'pagedropdown" style="display:none"></select></div>
+//      <!-- <div><a href="javascript:'.$this->tableId.'sorter.showall()">view all</a></div> -->
+//    </div>
+//    ';
+//  }
 
   /**
    * return the html representation of the table
@@ -537,36 +540,10 @@ class PLF_Table
     if ($this->invisibleIfEmpty && empty($this->rows)) {
       return;
     }
-
-    $frameworkUrl = getFrameworkUrl();
-    // only include the link to the css once! (check for tableid = table1)
-    if ($this->sortableTable && $this->tableId == 'table1') {
-      setHeadContent('<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/tinyTable/tinyTableCustomStyle.css"/>');
-    }
-
-    if ($this->sortableTable) {
-      $toReturn = '<div id="1" class="tinytable-tablewrapper">';
-
-      $searchAddition = '';
-      if (!$this->searchable) {
-        $searchAddition = ' style="display:none"';
-      }
-      $toReturn .= '<div id="2" class="tinytable-tableheader"'.$searchAddition.'>';
-      $toReturn .= '<div id="3" class="tinytable-search">
-        <select style="display:none" id="'.$this->tableId.'columns" onchange="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')"></select>  
-        <input type="text" placeholder="Filter by..." id="'.$this->tableId.'query" onkeyup="'.$this->tableId.'sorter.search(\''.$this->tableId.'query\')" />
-      </div> <!-- 3 close -->';
-      $toReturn .= '</div> <!-- 2 close -->';
-      if (!empty($this->rows)) {
-        $toReturn .= '<div id="4" class="tinytable-toptablenav">';
-        $toReturn .= $this->getTablenav();
-        $toReturn .= '<span class="tinytable-details"><div id="5">Records <span id="'.$this->tableId.'startrecord"></span>-<span id="'.$this->tableId.'endrecord"></span> of <span id="'.$this->tableId.'totalrecords"></span> </div> <!-- 5 close --></span>';
-        $toReturn .= '</div> <!-- 4 close -->'; // -end "tableheader"
-      }
-    }
+    $toReturn = '';
     // width="100%" on the table fixes the issue with the table shifting to the right when browser is wide
     if ($this->sortableTable) {
-      $toReturn .= '<table width="100%" '.$this->tableAttributes.' id="'.$this->tableId.'" class="tinytable">';
+      $toReturn .= '<table width="100%" '.$this->tableAttributes.' id="'.$this->tableId.'" class="display">';
     }
     else {
       $toReturn = '<table width="100%" '.$this->tableAttributes.'>';
@@ -603,48 +580,41 @@ class PLF_Table
     $toReturn .= '</table>';
 
     if ($this->sortableTable) {
-//      $toReturn .= '<div class="tinytable-tablefooter">';
-//      if ($this->entriesPerPage > 0) {
-//        $toReturn .= $this->getTablenavArrowsOnly();
-//      }
-
-//      $toReturn .= '</div>'; // -end "tablefooter"
-
-
-      $toReturn .= '</div> <!-- 1 close -->'; // -end "tablewrapper"
-
-      $initialPagingSize = $this->entriesPerPage;
-
-      $pagingStuff = '';
-      if ($this->entriesPerPage > 0) {
-        $pagingStuff = 'paginate:true,size:'.$this->entriesPerPage.',';
+      $config = '';
+      if ($this->searchable) {
+        $config .= "searching:true,";
       }
       else {
-        $pagingStuff = 'paginate:true,size:10000000000000000,';
+        $config .= "searching:false,";
       }
 
-      $toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/tinyTable/TinyTableV3/script.js"></script> 
-<script type="text/javascript">
-var '.$this->tableId.'sorter = new TINY.table.sorter(\''.$this->tableId.'sorter\', \''.$this->tableId.'\', {
-headclass:\'head\',
-ascclass:\'asc\',
-descclass:\'desc\',
-evenclass:\'evenrow\',
-oddclass:\'oddrow\',
-evenselclass:\'evenselected\',
-oddselclass:\'oddselected\','.$pagingStuff.'
-colddid:\''.$this->tableId.'columns\',
-currentid:\''.$this->tableId.'currentpage\',
-totalid:\''.$this->tableId.'totalpages\',
-startingrecid:\''.$this->tableId.'startrecord\',
-endingrecid:\''.$this->tableId.'endrecord\',
-totalrecid:\''.$this->tableId.'totalrecords\',
-hoverid:\'tinytable-selectedrow\',
-pageddid:\''.$this->tableId.'pagedropdown\',
-navid:\''.$this->tableId.'nav\',
-sortdir:1,
-init:true  });
-</script>';
+      $rowCount = count($this->rowsArray);
+      $count = $this->entriesPerPage;
+      // only do the pagination and length menu if caller has asked for less rows than we have to display
+      if ($count && $count < $rowCount) {
+        $config .= "pageLength:".$this->entriesPerPage.",";
+      }
+      else {
+        $config .= "paging:false,";
+      }
+      // per assistance here: https://stackoverflow.com/questions/11214384/how-to-left-align-the-jquery-datatable-pagination-buttons
+      // did some css stuff to move the elements around a bit, we want the pagination on the right (top and bottom), the filter on the left (top only) and the info on the left (bottom only), unless we're on a small screen and then we want them all to center.  !important here to override all else.
+      //.dataTable.no-footer {border-bottom:inherit !important;}
+
+//      table.dataTable thead > tr > th.sorting:after {color:red;}
+
+
+      // padding 4px is to get to the "compact" style.  project css can override this if not happy with the sizing
+      // the padding on the th.sorting:after is to get some space between the 2 arrows for indicating the sort direction
+      setHeadContent("<style>table.dataTable tbody tr:hover { background-color: #e8e8e8 !important;} table.dataTable {background-color: white} table.dataTable thead > tr > th.sorting:after {padding-top:2px;} table.dataTable tbody td {padding: 3px 4px;} .dataTables_paginate {  float: right !important;} .dataTables_wrapper {  padding-top:4px;} .dataTables_filter {  float: left !important; padding-top:3px !important;padding-bottom:3px !important} .dataTables_info {float:left!important} @media screen and (max-width: 767px){ .dataTables_info, .dataTables_paginate, .dataTables_filter {float: none !important;text-align: center !important;}}</style>");
+      // this changes default to show the filter and pagination at the top, and then the info and pagination at the bottom, per: https://datatables.net/reference/option/dom
+      // note, the order of the letters below does not control where it is left/right, that is controlled
+      // buy the CSS right above.  (this is just used to kill off the unwanted "length changing input control")
+      // note, if asking for more than the num of rows, or not specifying a count, the pagination won't display
+      $config .= "dom:'fprtip',";
+      // this says don't apply any initial client side ordering.  default is to order by the first column which is asinine!
+      $config .= "order:[],";
+      $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
     }
 
     return $toReturn;
