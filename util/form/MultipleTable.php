@@ -54,7 +54,10 @@ class PLF_MultipleTable extends PLF_MultipleSelectionElement {
     $headerRow = array();
     array_push($headerRow, '');
     $headerRow = array_merge($headerRow, $this->header);
-    $table = newTable($headerRow);
+    $table = newTableOrig($headerRow);
+    // currently the NEW table datatables is not working here, it only is seeing checked boxes for the currently visible page in the table... so swap back the original one for now
+    // will post question to datatables forum when I have a test prog ready
+    //$table = newTable($headerRow);
     $table->setFancy(true, $this->numRows);
     foreach ($this->values as $value) {
       //$key = current($value);
