@@ -606,12 +606,24 @@ class PLF_Table {
 
       // padding 4px is to get to the "compact" style.  project css can override this if not happy with the sizing
       // the padding on the th.sorting:after is to get some space between the 2 arrows for indicating the sort direction
-      setHeadContent("<style>table.dataTable tbody tr:hover { background-color: #e8e8e8 !important;} table.dataTable {background-color: white} table.dataTable thead > tr > th.sorting:after {padding-top:2px;} table.dataTable tbody td {padding: 3px 4px;} .dataTables_paginate {  float: right !important;} .dataTables_wrapper {  padding-top:4px;} .dataTables_filter {  float: left !important; padding-top:3px !important;padding-bottom:3px !important} .dataTables_info {float:left!important;padding-top:2px!important;} @media screen and (max-width: 767px){ .dataTables_info, .dataTables_paginate, .dataTables_filter {float: none !important;text-align: center !important;}}</style>");
+      // the clear:none on the info helped the info to show on the same line as the filter and the pagination
+      // goal was to show filter on left, pagination (if present) centered in middle, and info on the right.
+      // put these on both top and bottom.
+      // when narrow screen, all 3 center themselves.
+      setHeadContent("<style>table.dataTable tbody tr:hover { background-color: #e8e8e8 !important;} table.dataTable {background-color: white} table.dataTable thead > tr > th.sorting:after {padding-top:2px;} table.dataTable tbody td {padding: 3px 4px;}
+  .dataTables_filter {  float: left !important; padding-top:3px !important; padding-bottom:3px !important} 
+ .dataTables_info {float:right!important; padding-top:9px!important; clear:none!important}
+ .dataTables_paginate {  float: none !important;text-align: center!important} 
+  .dataTables_wrapper .dataTables_paginate .paginate_button {padding:4px 8px!important;}
+  .dataTables_wrapper {  padding-top:4px;} 
+   @media screen and (max-width: 767px){ .dataTables_info, .dataTables_paginate, .dataTables_filter {float: none !important;text-align: center !important;}}
+  
+  </style>");
       // this changes default to show the filter and pagination at the top, and then the info and pagination at the bottom, per: https://datatables.net/reference/option/dom
       // note, the order of the letters below does not control where it is left/right, that is controlled
       // buy the CSS right above.  (this is just used to kill off the unwanted "length changing input control")
       // note, if asking for more than the num of rows, or not specifying a count, the pagination won't display
-      $config .= "dom:'fiprtip',";
+     $config .= "dom:'fiprtfip',";
       // this says don't apply any initial client side ordering.  default is to order by the first column which is asinine!
       $config .= "order:[],";
       $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
