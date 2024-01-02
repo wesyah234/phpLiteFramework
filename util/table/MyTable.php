@@ -613,6 +613,7 @@ class PLF_Table {
       setHeadContent("<style>table.dataTable tbody tr:hover { background-color: #e8e8e8 !important;} table.dataTable {background-color: white} table.dataTable thead > tr > th.sorting:after {padding-top:2px;} table.dataTable tbody td {padding: 3px 4px;}
   .dataTables_filter {  float: left !important; padding-top:3px !important; padding-bottom:3px !important} 
  .dataTables_info {float:right!important; padding-top:9px!important; clear:none!important}
+ .dataTables_wrapper .dataTables_filter input {padding: 3px 7px!important}
  .dataTables_paginate {  float: none !important;text-align: center!important} 
   .dataTables_wrapper .dataTables_paginate .paginate_button {padding:4px 8px!important;}
   .dataTables_wrapper {  padding-top:4px;} 
