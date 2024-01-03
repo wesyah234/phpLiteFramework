@@ -374,10 +374,15 @@ function plfGo($projectDir) {
       else {
         // buffer entire call:
         $return = callFunc($module, $func);
-        if ($return == '' && !getDirectOutput()) {
-          loadModuleFile($projectDir, DEFAULTMODULE);
-          $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
-        }
+        // removed this, not sure it was ever smart to do this, basically, if the module_func returned nothing
+        // then we'd call the default module/function (main page typically) and show this content.
+        // this made things harder to troubleshoot during development, as if your function didn't return anything, you'd
+        // think the page should be blank (with the template around it of course).
+        // now it behaves that way.
+//        if ($return == '' && !getDirectOutput()) {
+//          loadModuleFile($projectDir, DEFAULTMODULE);
+//          $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
+//        }
       }
       pushRequestUrl();
     }
