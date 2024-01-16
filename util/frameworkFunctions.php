@@ -3208,7 +3208,7 @@ function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars = null) {
       // the http status code and deal with errors accordingly
 //      die('hello');
       if (!headers_sent()) {
-        header("HTTP/1.0 500");
+        //header("HTTP/1.0 500");
       }
       if (SHOWERRORSTOUSER) {
         echo htmlspecialchars($err).'<br/>';
