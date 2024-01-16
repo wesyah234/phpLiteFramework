@@ -4295,7 +4295,9 @@ function makeLinkPopNamedWin($popupTitle, $linkName, $modname = "", $func = "", 
 }
 
 function makeExternalLinkNamedWin($linkName, $url, $args = array()) {
-  return '<a target="'."$linkName-$args".'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
+  $urlEncoded = md5($url);
+  $argsEncoded = md5(implode($args));
+  return '<a target="'."$linkName-$urlEncoded-$argsEncoded".'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
 }
 
 /**
