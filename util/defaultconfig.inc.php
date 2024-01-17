@@ -133,7 +133,7 @@ setDefault('DEFAULTFUNC', 'contents');
 setDefault('DEFAULT_SESSION_EXPIRED_FUNC', 'sessionExpiredMessage');
 
 // the name of the website for the browser title bar
-setDefault('WEBSITENAME', 'Website Name Override This Please');
+setDefault('WEBSITENAME', 'Please set the constant WEBSITENAME in your project');
 
 // indicates if errors with stack trace should be echoed to the browser
 // in addition to being logged
