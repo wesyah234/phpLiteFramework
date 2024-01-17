@@ -13,6 +13,25 @@ setDefault('PHP_TZ_OVERRIDE_ALWAYS', false);
 // if set to a valid PHP timezone value (https://www.php.net/manual/en/timezones.php), the php timezone setting will be overriden, but only if not already set in the php environment (via php.ini)
 setDefault('PHP_TZ_OVERRIDE_ONLY_IF_NOT_SET', 'America/Chicago');
 
+
+// Sometimes, on a production server, the defaults in php.ini are such that errors are suppressed, which is fine for
+// web apps, but not so fine for command line jobs using the framework, as they will be suppressing errors and this
+// can make it difficult to track down errors if the cron jobs are failing.  These defaults are set when running
+// a script via the command line, and can be changed in your local environment if you still want them suppressed
+// with the following:
+//define('CLI_DISPLAY_ERRORS', 0);
+//define('CLI_DISPLAY_STARTUP_ERRORS', 0);
+//define('CLI_ERROR_REPORTING', 0);
+// see plf.inc.php:
+/**
+ini_set('display_errors', CLI_DISPLAY_ERRORS);
+ini_set('display_startup_errors', CLI_DISPLAY_STARTUP_ERRORS);
+error_reporting(CLI_ERROR_REPORTING);
+  */
+
+setDefault('CLI_DISPLAY_ERRORS', 1);
+setDefault('CLI_DISPLAY_STARTUP_ERRORS', 1);
+setDefault('CLI_ERROR_REPORTING', E_ALL);
 //
 // set to true to use clean urls without needing any mod_rewrite functionality
 // if false, makeUrl ('mymodule', 'myfunction', array('parm1'=>'value1', 'parm2'=>'val2'))

@@ -210,15 +210,26 @@ function plfGo($projectDir) {
 
   setGlobalVar('PROJECT_DIR', $projectDir);
 
-// if someone is calling this in command line mode, or they've set the 
-// EMBED_FRAMEWORK_IN_ANOTHER_WEBAPP variable, just get out now... 
-  // we've included the important code that they will need and 
+// see defaultconfig.inc.php for explanation of these error settings
   // we don't need to go any farther to parse urls, etc
-  if (!isset($_SERVER['HTTP_HOST']) || EMBED_FRAMEWORK_IN_ANOTHER_WEBAPP) {
+  if (!isset($_SERVER['HTTP_HOST'])) {
+    ini_set('display_errors', CLI_DISPLAY_ERRORS);
+    ini_set('display_startup_errors', CLI_DISPLAY_STARTUP_ERRORS);
+    error_reporting(CLI_ERROR_REPORTING);
     // include the db stuff first, then get out
     plfIncludeStage2($projectDir);
     return;
   }
+  // if someone has set the
+// EMBED_FRAMEWORK_IN_ANOTHER_WEBAPP variable, just get out now...
+  // we've included the important code that they will need and
+  // we don't need to go any farther to parse urls, etc
+  if (EMBED_FRAMEWORK_IN_ANOTHER_WEBAPP) {
+    // include the db stuff first, then get out
+    plfIncludeStage2($projectDir);
+    return;
+  }
+
   // now, double check that someone's not in here via a call to another php script that is not
   // the index.php file (the central controller)
   // this could be a hack attempt, or an attempt to call one of the standalone scripts in the main
