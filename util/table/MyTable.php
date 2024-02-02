@@ -624,7 +624,7 @@ class PLF_Table {
       // note, the order of the letters below does not control where it is left/right, that is controlled
       // buy the CSS right above.  (this is just used to kill off the unwanted "length changing input control")
       // note, if asking for more than the num of rows, or not specifying a count, the pagination won't display
-     $config .= "dom:'fiprtfip',";
+     $config .= "dom:'fiprt',";
       // this says don't apply any initial client side ordering.  default is to order by the first column which is asinine!
       $config .= "order:[],";
       $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
