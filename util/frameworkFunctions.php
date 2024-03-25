@@ -2720,11 +2720,17 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
     //Create the Transport with username/pass or without
     $username = urlencode(MAIL_SMTPUSERNAME);
     $password = urlencode(MAIL_SMTPPASSWORD);
-    if (!empty($username) && !empty($password)) {
+    if (!empty($username) && !empty($password) && !empty(MAIL_SMTPSERVER) && !empty(MAIL_SMTPPORT)) {
       $transport = Transport::fromDsn("smtp://$username:$password@".MAIL_SMTPSERVER.':'.MAIL_SMTPPORT);
     }
-    else {
+    elseif (!empty(MAIL_SMTPSERVER) && !empty(MAIL_SMTPPORT)) {
       $transport = Transport::fromDsn('smtp://'.MAIL_SMTPSERVER.':'.MAIL_SMTPPORT);
+    }
+    elseif (!empty(MAIL_DSN)) {
+      $transport = Transport::fromDsn(MAIL_DSN);
+    }
+    else {
+      $transport = Transport::fromDsn('sendmail://default');
     }
     $mailer = new Mailer($transport);
 

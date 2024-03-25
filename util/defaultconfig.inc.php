@@ -227,10 +227,14 @@ setDefault('REALLYSENDMAIL', true);
 // the REALLYSENDMAIL flag is set to true.
 setDefault('TEMP_EMAIL_ADDRESS', 'address@example.com');
 
+
+
+// NOTE, we will use default sendmail binary, per https://symfony.com/doc/current/mailer.html#using-built-in-transports
+// if no other mail settings are specified
 setDefault('MAIL_SMTPSERVER', '');
 setDefault('MAIL_SMTPUSERNAME', '');
 setDefault('MAIL_SMTPPASSWORD', '');
-// use 465 for secure, plus also set MAIL_SMTPSECURE to 1
 setDefault('MAIL_SMTPPORT', '25');
-setDefault('MAIL_SMTPSECURE', '0');
+// allow direct configuration of the symfony mailer transport.  Other above mail settings are for backwards compatability (ie. setting server/port/username separately)
+setDefault('MAIL_DSN', '');
 ?>
