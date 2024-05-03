@@ -55,6 +55,21 @@ function jquerypoptop(msg) {
     $('#logoutwarning').fadeToggle(1200).fadeToggle(600).fadeToggle(1200).fadeToggle(600).fadeToggle(1200).fadeToggle(600);
 }
 
+/**
+ * This is used by addHeartbeat() to do an ajaxy heartbeat ping.  URL it will hit is the root framework url, defined in every project with the
+ * constant: FRAMEWORKURL. This will return a small amount of bytes.  Only use this for apps where you absolutely don't want a timeout
+ * when user is inactive.
+ * @param url
+ */
+function jqueryheartbeat(url) {
+    $.ajax({
+        type : 'GET',
+        url : url,
+        cache:false,
+        dataType : 'html',
+    });
+}
+
 
 // thanks to: 
 // http://stackoverflow.com/a/2044793/2799545
@@ -277,6 +292,33 @@ function ajaxText(url, div, controlName, paramName, delayBeforeFiring) {
         }
         else {
             jQuery.get(url, pars);
+        }
+    }, delayBeforeFiring);
+}
+
+function ajaxTextarea(url, div, controlName, paramName, delayBeforeFiring) {
+    if (ajaxTextTimeout) {
+        clearTimeout(ajaxTextTimeout);
+    }
+    ajaxTextTimeout = setTimeout(function () {
+
+        var pars;
+        if (paramName != '') {
+            pars = paramName + '=' + controlName.value;
+        }
+        if (document.getElementById(div) != null) {
+
+            /*jQuery("#"+div).load(url, pars);*/
+
+            jQuery.post(url, pars,
+                function (data) {
+                    jQuery("#" + div).html(data);
+                }
+            );
+
+        }
+        else {
+            jQuery.post(url, pars);
         }
     }, delayBeforeFiring);
 }

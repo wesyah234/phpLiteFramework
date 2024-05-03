@@ -391,6 +391,26 @@ function addLogoutWarningPopup($logoutWarningPopupMinutes) {
 }
 
 /**
+ * Call this if you want the app to ping the server to keep the session alive as long as the browser is open.
+ *  This can be called by any of the blocks so it will appear on every page of the app.
+ * ex:
+ *  * function topNav_contents() {
+ *      $toReturn = '';
+ *      if (userLoggedIn()) {
+ *        addHeartbeat(30);
+ *      }
+
+ * @param $intervalInMinutes 30 min is usually enough to keep the session alive
+ */
+function addHeartbeat($intervalInMinutes) {
+  $keepAliveUrl = FRAMEWORKURL."?ping=".getUserId();
+  $intervalInMilliSeconds = $intervalInMinutes * 60 * 1000;
+  $headContent = '<script>    setInterval(function(){ jqueryheartbeat("'.$keepAliveUrl.'"); }, '.$intervalInMilliSeconds.');</script>';
+  setHeadContent($headContent);
+}
+
+
+/**
  *
  * Use this to generate a button that when clicked, will select the element indicated by the element ID
  *
@@ -1060,6 +1080,20 @@ function makeAjaxText($url, $size, $maxlength, $initialValue = NULL, $callbackDi
 
   $toReturn .= ' value="'.htmlspecialchars($initialValue).'"';
   $toReturn .= ' />';
+  return $toReturn;
+}
+
+/**
+ * Used to make a text area that could provide a way to make a large text box that autosaved to a database whenever the user paused.  The callback div name can be used to display a message that the data has been saved successfully... the delay is defaulted to 500 milliseconds, which is good for normal speed typists, if they pause for 500 ms, it will fire the call to the url.  (similar to makeAjaxText, but makes a bigger textarea, and
+ * also uses POST instead of GET so that we can pass more data along and it won't show in server logs.
+ */
+function makeAjaxTextarea($url, $rows, $cols, $initialValue = NULL, $callbackDivName = '', $paramName = '', $delayBeforeFiring = 500) {
+  static $ajaxcounter;
+  $ajaxcounter++;
+  $id = "PLF_AjaxText-$ajaxcounter";
+  $toReturn = ' <textarea rows = "'.$rows.'" cols = "'.$cols.'"  name="'.$id.'" id="'.$id.'" onkeyup="ajaxTextarea(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\', '.$delayBeforeFiring.')"  >';
+  $toReturn .= $initialValue;
+  $toReturn .= ' </textarea>';
   return $toReturn;
 }
 
@@ -1970,8 +2004,7 @@ function calculateDOB($age) {
  * @example msleep(1.5); // delay for 1.5 seconds
  * @example msleep(.1); // delay for 100 milliseconds or a 10th of a second
  */
-function msleep($time)
-{
+function msleep($time) {
   usleep($time * 1000000);
 }
 
@@ -2702,7 +2735,7 @@ function sendMailMultipleCombined($replyToBounceAddress, $fromAddress, $fromName
 /**
  * found: https://stackoverflow.com/questions/5341168/best-way-to-make-links-clickable-in-block-of-text
  */
-function makeLinksClickable($text){
+function makeLinksClickable($text) {
   return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 }
 
@@ -2765,7 +2798,7 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
     $message->returnPath($replyToBounceAddress);
     $mailer->send($message);
   } catch (\Exception $e) {
-    logError("There was a problem sending mail :".$e->getMessage(). "Exception stack trace: ".goodNl2br($e->getTraceAsString()));
+    logError("There was a problem sending mail :".$e->getMessage()."Exception stack trace: ".goodNl2br($e->getTraceAsString()));
   }
 }
 
