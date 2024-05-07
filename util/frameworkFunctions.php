@@ -391,26 +391,6 @@ function addLogoutWarningPopup($logoutWarningPopupMinutes) {
 }
 
 /**
- * Call this if you want the app to ping the server to keep the session alive as long as the browser is open.
- *  This can be called by any of the blocks so it will appear on every page of the app.
- * ex:
- *  * function topNav_contents() {
- *      $toReturn = '';
- *      if (userLoggedIn()) {
- *        addHeartbeat(30);
- *      }
-
- * @param $intervalInMinutes 30 min is usually enough to keep the session alive
- */
-function addHeartbeat($intervalInMinutes) {
-  $keepAliveUrl = FRAMEWORKURL."?ping=".getUserId();
-  $intervalInMilliSeconds = $intervalInMinutes * 60 * 1000;
-  $headContent = '<script>    setInterval(function(){ jqueryheartbeat("'.$keepAliveUrl.'"); }, '.$intervalInMilliSeconds.');</script>';
-  setHeadContent($headContent);
-}
-
-
-/**
  *
  * Use this to generate a button that when clicked, will select the element indicated by the element ID
  *
