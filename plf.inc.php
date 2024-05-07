@@ -360,6 +360,10 @@ function plfGo($projectDir) {
       loadModuleFile($projectDir, DEFAULTMODULE);
       $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
     }
+    elseif ('keepAlivePing' == $module) {
+      setDirectOutput();
+      $return = date('r');
+    }
     elseif ('showStatusMsg' == $module) {
       // this "persistent" status message is propagated via cookie
       // to avoid using the session which would result in unncessary
@@ -482,6 +486,12 @@ function plfGo($projectDir) {
     $headContent .= '<link href="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" >'."\n";
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/js/bootstrap.min.js"></script>'."\n";
   }
+  if (SESSION_HEARTBEAT_MINUTES > 0) {
+    $keepAliveUrl = makeUrl('keepAlivePing', '');
+    $intervalInMilliSeconds = SESSION_HEARTBEAT_MINUTES * 60 * 1000;
+    $headContent .= '<script>    setInterval(function(){ jqueryheartbeat("'.$keepAliveUrl.'"); }, '.$intervalInMilliSeconds.');</script>';
+  }
+
   if (getGlobalVar('usingDropzone')) {
     setHeadContent('<script type="text/javascript" src="'.getFrameworkUrl().'/thirdParty/dropzone/dropzone.js'.'"></script>'."\n");
     setHeadContent('<link href="'.getFrameworkUrl().'/thirdParty/dropzone/basic.css" type="text/css" rel="stylesheet">'."\n");

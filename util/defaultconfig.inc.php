@@ -124,7 +124,15 @@ setDefault('ZEND_FRAMEWORK_VERSION_DIR', '1.10.1');
 setDefault('SITE_DOWN_FILENAME', 'sitedown.txt');
 
 
+// expire the session in this number of minutes, even if the PHP session might stick around longer
 setDefault('SESSION_EXPIRE_MINUTES', 30);
+
+// set this to something less than SESSION_EXPIRE_MINUTES and greater than 0 to keep
+// user's session active as long as the
+// browser is open and able to run the javascript AJAX pings back to the server
+// default is 0 which will disable the feature
+// caution, only do this on systems/apps you trust to be responsible with the session
+setDefault('SESSION_HEARTBEAT_MINUTES', 0);
 
 // this specifies the value to store on the db when user checks 
 // a form checkbox, should probably use a number for database
