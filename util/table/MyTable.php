@@ -57,6 +57,8 @@ class PLF_Table {
   var $url; // see setEditable
   var $callbackDivName; // see setEditable
   var $searchable;
+  var $addlMomentDatetimeFormat;
+  var $addlMomentDateFormat;
 
   // construct a table
   // $heading can be a series of strings to be used as the heading of the table
@@ -471,11 +473,13 @@ class PLF_Table {
    * $entriesPerPage - how many rows to show per page - set to 0 to disable pagination
    */
 
-  function setFancy($searchable = true, $entriesPerPage = null) {
+  function setFancy($searchable = true, $entriesPerPage = null, $addlMomentDateFormat = null, $addlMomentDatetimeFormat = null) {
     $this->sortableTable = TRUE; // this drives all the addition of javascript
     // this is passed in as configurable options to the javascript datatable constructor
     $this->searchable = $searchable;
     $this->entriesPerPage = $entriesPerPage;
+    $this->addlMomentDateFormat = $addlMomentDateFormat;
+    $this->addlMomentDatetimeFormat = $addlMomentDatetimeFormat;
     setGlobalVar('usingFancyTable', true);
   }
 
@@ -627,7 +631,14 @@ class PLF_Table {
      $config .= "dom:'fiprt',";
       // this says don't apply any initial client side ordering.  default is to order by the first column which is asinine!
       $config .= "order:[],";
-      $toReturn .= '<script> new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
+      // the .datetime calls here are sending in moment.js format strings as possible datetime formats for the client side sorting routines
+      // for dates: we are sending in both 05/01/2020 format, as well as without leading zeroes: 5/1/2020
+      // for datetimes: we are sending in both date formats above, along with the 12 hr clock with AMPM and a zero padded minute and a non padded hour
+      // for any other formats, you can use the parameters on the setFancy method to send in a couple more formats, one for date and one for datetime.
+      $extraSettings = '';
+      $extraSettings .= isReallySet($this->addlMomentDateFormat)?"DataTable.datetime('{$this->addlMomentDateFormat}');":'';
+      $extraSettings .= isReallySet($this->addlMomentDatetimeFormat)?"DataTable.datetime('{$this->addlMomentDatetimeFormat}');":'';
+      $toReturn .= '<script>DataTable.datetime(\'MM/DD/YYYY\');DataTable.datetime(\'M/D/YYYY\');DataTable.datetime(\'MM/DD/YYYY H:mm A\');DataTable.datetime(\'M/D/YYYY H:mm A\');'.$extraSettings.' new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
     }
 
     return $toReturn;
