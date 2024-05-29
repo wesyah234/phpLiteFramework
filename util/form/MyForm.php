@@ -35,9 +35,11 @@ require 'Text.php';
 require 'Textarea.php';
 require 'Password.php';
 require 'Select.php';
+require 'SelectChosen.php';
 require 'CharismaSelect.php';
 require 'ReadOnlySelect.php';
 require 'MultipleSelect.php';
+require 'MultipleSelectChosen.php';
 require 'ReportingMultipleSelect.php';
 require 'CoolMultipleSelect.php';
 require 'MultipleCheckbox.php';
@@ -122,6 +124,7 @@ class PLF_Form {
   // update statement
   var $forceSecure = false; // flag to indicate if we should build the form action url using https
   var $usingCoolDateTime = false; // whether we're using the datetime picker
+  var $usingSelectChosen = false; // whether we're using the jjj/chosen fancy select box
   var $isValid = true; // flag for use by the addFieldErrorMessage, so that isValid() will return false
   var $disabled = false; // whether all the form elements should be set to "disabled" to prevent edits
   var $additionalSubmitButtons = array(); // holds additional buttons the user can click on.
@@ -325,6 +328,10 @@ class PLF_Form {
   function addSelect($name, $label, $values, $required, $onChange = NULL) {
     $this->addElement(new PLF_Select($name, $label, $values, $required, $onChange));
   }
+  function addSelectChosen($name, $label, $values, $required, $onChange = NULL) {
+    $this->addElement(new PLF_ChosenSelect($name, $label, $values, $required, $onChange));
+    $this->usingSelectChosen = true;
+  }
 
   function addCharismaSelect($name, $label, $values, $required, $onChange = NULL) {
     $this->addElement(new PLF_CharismaSelect($name, $label, $values, $required, $onChange));
@@ -349,6 +356,11 @@ class PLF_Form {
    */
   function addMultipleSelect($name, $label, $values, $size, $required) {
     $this->addElement(new PLF_MultipleSelect($name, $label, $values, $size, $required));
+  }
+
+  function addMultipleSelectChosen($name, $label, $values, $required) {
+    $this->addElement(new PLF_MultipleSelectChosen($name, $label, $values, $required));
+    $this->usingSelectChosen = true;
   }
 
   /**
@@ -1000,6 +1012,11 @@ function verify() {
     if ($this->usingCoolDateTime) {
       $toReturn .= '
 <script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/rainforestCal/datetimepicker_css.js'.'"></script>';
+    }
+    if ($this->usingSelectChosen) {
+      setHeadContent('
+       <link rel="stylesheet" type="text/css" href="'.$frameworkUrl.'/vendor/jjj/chosen/docs/chosen.css">
+       <script type="text/javascript" src="'.$frameworkUrl.'/vendor/jjj/chosen/docs/chosen.jquery.min.js'.'"></script>');
     }
 
 
