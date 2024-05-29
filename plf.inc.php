@@ -479,6 +479,7 @@ function plfGo($projectDir) {
   // this MUST be after the inclusion of the jquery js, or we will get the "jQuery is not defined" error
   if (getGlobalVar('usingFancyTable')) {
     $headContent .='<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.css" />';
+    $headContent .='<script src="'.$frameworkUrl.'/thirdParty/momentjs/moment.min.js"></script>';
     $headContent .='<script src="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.js"></script>';
   }
   if (USE_BOOTSTRAP) {
