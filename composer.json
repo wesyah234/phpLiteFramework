@@ -9,6 +9,7 @@
   },
   "require": {
     "symfony/mailer": "*",
+    "jjj/chosen": "^2.2.1",
     "phpoffice/phpspreadsheet": "*",
     "adodb/adodb-php": "^5.22",
     "tecnickcom/tcpdf": "*",
