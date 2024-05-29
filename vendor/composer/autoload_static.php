@@ -23,6 +23,10 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         array (
             'ZipStream\\' => 10,
         ),
+        'T' => 
+        array (
+            'Tests\\PhpOffice\\Math\\' => 21,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -49,15 +53,12 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
             'Psr\\Clock\\' => 10,
             'PhpOffice\\PhpWord\\' => 18,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
+            'PhpOffice\\Math\\' => 15,
         ),
         'M' => 
         array (
             'MyCLabs\\Enum\\' => 13,
             'Matrix\\' => 7,
-        ),
-        'L' => 
-        array (
-            'Laminas\\Escaper\\' => 16,
         ),
         'E' => 
         array (
@@ -71,6 +72,7 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         'C' => 
         array (
             'Complex\\' => 8,
+            'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
     );
@@ -79,6 +81,10 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         'ZipStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
+        ),
+        'Tests\\PhpOffice\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/math/tests/Math',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -165,6 +171,10 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
+        'PhpOffice\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/math/src/Math',
+        ),
         'MyCLabs\\Enum\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
@@ -172,10 +182,6 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
-        ),
-        'Laminas\\Escaper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -192,6 +198,10 @@ class ComposerStaticInit463aae64296518690b4049007a4a19d6
         'Complex\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
+        ),
+        'Carbon\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
         ),
         'Carbon\\' => 
         array (
