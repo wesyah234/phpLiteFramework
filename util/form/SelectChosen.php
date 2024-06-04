@@ -71,7 +71,7 @@ class PLF_ChosenSelect extends PLF_Element {
 
     $toReturn .= '</select>';
     $toReturn .= '<script type="text/javascript">
- $(".chosen-select").chosen({allow_single_deselect:true});
+ $(".chosen-select").chosen({});
  </script>';
     return $toReturn;
   }
