@@ -1064,10 +1064,10 @@ function makeAjaxText($url, $size, $maxlength, $initialValue = NULL, $callbackDi
 }
 
 /**
- * Used to make a text area that could provide a way to make a large text box that autosaved to a database whenever the user paused.  The callback div name can be used to display a message that the data has been saved successfully... the delay is defaulted to 500 milliseconds, which is good for normal speed typists, if they pause for 500 ms, it will fire the call to the url.  (similar to makeAjaxText, but makes a bigger textarea, and
+ * Used to make a text area that could provide a way to make a large text box that autosaved to a database whenever the user paused.  The callback div name can be used to display a message that the data has been saved successfully... the delay is defaulted to 300 milliseconds, which is good for normal speed typists, if they pause for 300 ms, it will fire the call to the url.  (similar to makeAjaxText, but makes a bigger textarea, and
  * also uses POST instead of GET so that we can pass more data along and it won't show in server logs.
  */
-function makeAjaxTextarea($url, $rows, $cols, $initialValue = NULL, $callbackDivName = '', $paramName = '', $delayBeforeFiring = 500) {
+function makeAjaxTextarea($url, $rows, $cols, $initialValue = NULL, $callbackDivName = '', $paramName = '', $delayBeforeFiring = 300) {
   static $ajaxcounter;
   $ajaxcounter++;
   $id = "PLF_AjaxText-$ajaxcounter";
