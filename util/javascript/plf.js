@@ -283,7 +283,7 @@ function ajaxText(url, div, controlName, paramName, delayBeforeFiring) {
 
             /*jQuery("#"+div).load(url, pars);*/
 
-            jQuery.get(url, pars,
+            jQuery.post(url, pars,
                 function (data) {
                     jQuery("#" + div).html(data);
                 }
@@ -291,7 +291,7 @@ function ajaxText(url, div, controlName, paramName, delayBeforeFiring) {
 
         }
         else {
-            jQuery.get(url, pars);
+            jQuery.post(url, pars);
         }
     }, delayBeforeFiring);
 }
