@@ -1073,7 +1073,7 @@ function makeAjaxTextarea($url, $rows, $cols, $initialValue = NULL, $callbackDiv
   $id = "PLF_AjaxText-$ajaxcounter";
   $toReturn = ' <textarea rows = "'.$rows.'" cols = "'.$cols.'"  name="'.$id.'" id="'.$id.'" onkeyup="ajaxTextarea(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\', '.$delayBeforeFiring.')"  >';
   $toReturn .= $initialValue;
-  $toReturn .= ' </textarea>';
+  $toReturn .= '</textarea>';
   return $toReturn;
 }
 
