@@ -1729,7 +1729,7 @@ function pushRequestUrl() {
   }
 }
 
-function getLastUrlArray($max = 20, $filterDuplicates = false) {
+function getLastUrlArray($max = 20, $filterDuplicates = false, $filterBlankTitles = false) {
   $lastUrls = array();
   $lastUrlsCookie = getCookieVar('lastUrlArray');
   if (isReallySet($lastUrlsCookie)) {
@@ -1751,6 +1751,15 @@ function getLastUrlArray($max = 20, $filterDuplicates = false) {
       foreach ($lastUrls as $lasturl) {
         if (!in_array($lasturl['url'], $used)) {
           $used[] = $lasturl['url'];
+          $filteredList[] = $lasturl;
+        }
+      }
+      $lastUrls = $filteredList;
+    }
+    if ($filterBlankTitles) {
+      $filteredList = array();
+      foreach ($lastUrls as $lasturl) {
+        if (isReallySet($lasturl['title'])) {
           $filteredList[] = $lasturl;
         }
       }
