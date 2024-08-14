@@ -3505,7 +3505,13 @@ function loadModuleFile($projectDir, $modname) {
   if (file_exists($osfile)) {
     // Load file
     include_once $osfile;
+    return true;
   }
+  else {
+    // the module file did not exist, return false so plf.inc.php can handle this and call the default module instead
+    return false;
+  }
+
 }
 
 function loadBlockFile($projectDir, $modname) {

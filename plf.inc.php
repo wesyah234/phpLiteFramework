@@ -355,14 +355,22 @@ function plfGo($projectDir) {
   }
   else {
 //    pushRequestUrl(getPageTitle());
-
-    if (empty($module)) {
+    if (empty($module) || !loadModuleFile($projectDir, $module)) {
       loadModuleFile($projectDir, DEFAULTMODULE);
       $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
     }
     elseif ('keepAlivePing' == $module) {
       setDirectOutput();
-      $return = date('r');
+      session_start();
+      updateSessionAccessTime();
+      $unixTimestampFromClient = getRequestVarNum('u');
+      $currentUnixTimestamp = time();
+      $remoteClientIp = $_SERVER['REMOTE_ADDR'];
+      $inactiveSeconds = ($currentUnixTimestamp - $unixTimestampFromClient);
+      $inactiveMinutes = round($inactiveSeconds / 60);
+      $inactiveHours  = round($inactiveMinutes / 60);
+      $timeStringFromClient = getRequestVarString('t');
+      $return = "\n   --keepin the dream alive!--\n\nfor session id: ".session_id()."\n  from IP addr: ".$remoteClientIp." \n      datetime: ".date('D___d_M_Y___H_i_s')." \ninactive since: $timeStringFromClient \nwhich was: $inactiveSeconds seconds ago\n or about: $inactiveMinutes minutes ago\n or about: $inactiveHours hours ago";
     }
     elseif ('showStatusMsg' == $module) {
       // this "persistent" status message is propagated via cookie
@@ -487,8 +495,11 @@ function plfGo($projectDir) {
     $headContent .= '<link href="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" >'."\n";
     $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/bootstrap/3.4.1-dist/js/bootstrap.min.js"></script>'."\n";
   }
-  if (SESSION_HEARTBEAT_MINUTES > 0) {
-    $keepAliveUrl = makeUrl('keepAlivePing', '');
+  // thwow the javascript jqueryheartbeat function onto the head content of the page only IF project is configured to send session heartbeats and also
+  // only IF there is an active session.  This way we will only heartbeat when the user has logged in, and if they log off and the session gets killed
+  // then as their browser sits at a main (logged out) page, it won't be sending heartbeats
+  if (SESSION_HEARTBEAT_MINUTES > 0 && PHP_SESSION_ACTIVE == session_status()) {
+    $keepAliveUrl = makeUrl('keepAlivePing', 'keepAlivePing', 's='.session_id().'&t='.date('D___d_M_Y___H_i_s').'&u='.time());
     $intervalInMilliSeconds = SESSION_HEARTBEAT_MINUTES * 60 * 1000;
     $headContent .= '<script>    setInterval(function(){ jqueryheartbeat("'.$keepAliveUrl.'"); }, '.$intervalInMilliSeconds.');</script>';
   }
