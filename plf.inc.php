@@ -139,7 +139,7 @@ function plfIncludeStage1($projectDir) {
   // browser capabalities script
   require 'thirdParty/mobileesp/mdetect.php';
 
- // getting via composer now`
+  // getting via composer now`
   // require 'thirdParty/date/Carbon-2.61.0/autoload.php';
 
   // only pull in the composer stuff if we're above php 7.1
@@ -180,7 +180,6 @@ function plfGo($projectDir) {
   if (PHP_TZ_OVERRIDE_ALWAYS) {
     ini_set('date.timezone', PHP_TZ_OVERRIDE_ALWAYS);
   }
-
 
 
 // NOTE: we aren't including Zend Framework in the PHP Lite Framework anymore.
@@ -355,11 +354,7 @@ function plfGo($projectDir) {
   }
   else {
 //    pushRequestUrl(getPageTitle());
-    if (empty($module) || !loadModuleFile($projectDir, $module)) {
-      loadModuleFile($projectDir, DEFAULTMODULE);
-      $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
-    }
-    elseif ('keepAlivePing' == $module) {
+    if ('keepAlivePing' == $module) {
       setDirectOutput();
       session_start();
       updateSessionAccessTime();
@@ -368,9 +363,13 @@ function plfGo($projectDir) {
       $remoteClientIp = $_SERVER['REMOTE_ADDR'];
       $inactiveSeconds = ($currentUnixTimestamp - $unixTimestampFromClient);
       $inactiveMinutes = round($inactiveSeconds / 60);
-      $inactiveHours  = round($inactiveMinutes / 60);
+      $inactiveHours = round($inactiveMinutes / 60);
       $timeStringFromClient = getRequestVarString('t');
       $return = "\n   --keepin the dream alive!--\n\nfor session id: ".session_id()."\n  from IP addr: ".$remoteClientIp." \n      datetime: ".date('D___d_M_Y___H_i_s')." \ninactive since: $timeStringFromClient \nwhich was: $inactiveSeconds seconds ago\n or about: $inactiveMinutes minutes ago\n or about: $inactiveHours hours ago";
+    }
+    elseif (empty($module) || !loadModuleFile($projectDir, $module)) {
+      loadModuleFile($projectDir, DEFAULTMODULE);
+      $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
     }
     elseif ('showStatusMsg' == $module) {
       // this "persistent" status message is propagated via cookie
@@ -486,9 +485,9 @@ function plfGo($projectDir) {
   }
   // this MUST be after the inclusion of the jquery js, or we will get the "jQuery is not defined" error
   if (getGlobalVar('usingFancyTable')) {
-    $headContent .='<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.css" />';
-    $headContent .='<script src="'.$frameworkUrl.'/thirdParty/momentjs/moment.min.js"></script>';
-    $headContent .='<script src="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.js"></script>';
+    $headContent .= '<link rel="stylesheet" href="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.css" />';
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/momentjs/moment.min.js"></script>';
+    $headContent .= '<script src="'.$frameworkUrl.'/thirdParty/dataTables/1.13.7/jquery.dataTables.min.js"></script>';
   }
   if (USE_BOOTSTRAP) {
     // bs3 3.4.1
@@ -561,9 +560,9 @@ function plfGo($projectDir) {
   $end = microtime_float();
   $took = $end - $start;
 
-  echo  "<!-- page built in $took seconds -->";
+  echo "<!-- page built in $took seconds -->";
   echo $newStuff;
-  echo  "<!-- page built in $took seconds -->";
+  echo "<!-- page built in $took seconds -->";
 
 }
 
