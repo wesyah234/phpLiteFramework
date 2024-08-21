@@ -541,9 +541,6 @@ class PLF_Form {
       $element = $this->elements[$fieldName];
       return $element;
     }
-    else {
-      logNotice("You're attempting to access a form field named $fieldName, however, a field with this name does not exist in the form");
-    }
   }
 
   function getValue($fieldName) {
@@ -551,18 +548,12 @@ class PLF_Form {
       $element = $this->elements[$fieldName];
       return $element->getValue();
     }
-    else {
-      logNotice("You're attempting to access a form field named $fieldName, however, a field with this name does not exist in the form");
-    }
   }
 
   function getValueForDb($fieldName) {
     if (isset($this->elements[$fieldName])) {
       $element = $this->elements[$fieldName];
       return $element->getValueForDb();
-    }
-    else {
-      logNotice("You're attempting to access a form field named $fieldName, however, a field with this name does not exist in the form");
     }
   }
 
