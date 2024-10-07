@@ -104,6 +104,8 @@ class PLF_Form {
   // javascript text counter at end of form
   var $haveHtmlEditor = false;
   var $formName;
+
+  var $hideHiddenSubmitField = false;
   var $haveFileUpload = false; // holds whether we've added a file upload control
   // to the form, for generating the enctype attribute
   // on the form tag
@@ -167,6 +169,12 @@ class PLF_Form {
   // return true if user clicked the main button
   function mainButtonClicked() {
     return isReallySet(getRequestVarString(SUBMIT_BTN_NAME));
+  }
+
+
+  // if this method is called on a form, the form when generated will NOT have the hiddenXYZ123 field which will indicate that the form has been posted by the user and the getSTate will fall into the SUBMIT_VALID or SUBMIT_INVALID... so if you call this your getSTate will be INITIAL GET even though the form has been submitted.  Used for special cases where we want one form to post to another method that process a form.
+  function omitHiddenSubmitField() {
+    $this->hideHiddenSubmitField = true;
   }
 
   function setUseCheckboxes() {
@@ -948,8 +956,10 @@ function verify() {
       $toReturn .= '<input '.$this->getDisabledAttribute().' type="submit" tabindex="'.$this->tabIndex.'" name="'.$buttonName.'" value="'.$buttonText.'" /> ';
     }
 
-    // render a special hidden element that we use to know if the form has been submitted
-    $toReturn .= '<input type="hidden" name="hiddenXYZ123"/>';
+    if (!$this->hideHiddenSubmitField) {
+      // render a special hidden element that we use to know if the form has been submitted
+      $toReturn .= '<input type="hidden" name="hiddenXYZ123"/>';
+    }
 
     // render hidden fields for the module name and func name
     // to get around problem when the method is GET
