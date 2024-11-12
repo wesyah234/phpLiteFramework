@@ -43,6 +43,8 @@ class PLF_Element {
 
   var $disabled = false;
 
+  var $parentForm;
+
 
   function __construct($name, $label, $required) {
     $this->name = $name;
@@ -56,6 +58,14 @@ class PLF_Element {
 
   function setDisabled($disabled) {
     $this->disabled = $disabled;
+  }
+
+  function setParentForm($form) {
+    $this->parentForm = $form;
+  }
+
+  function getParentForm() {
+    return $this->parentForm;
   }
 
   function getDisabled() {
@@ -80,6 +90,12 @@ class PLF_Element {
 
   function getName() {
     return $this->name;
+  }
+
+ // this can be used to get an "id" for the form field that is unique because it will prepend the form name to the name of the element
+ // useful for when you have javascript actions that need to target certain element ids, like the CoolDate control.
+  function getId() {
+    return $this->parentForm->getFormName().'-'.$this->name;
   }
 
 

@@ -42,7 +42,8 @@ class PLF_CoolDate extends PLF_Element {
 
   // MyForm class will set tabindex before calling this method
   function render($tabIndex) {
-    $toReturn = '<input  '.$this->getDisabledAttribute().' '.$this->attribute.' type="text" tabindex="'.$tabIndex.'" name="'.$this->getName().'" id="'.$this->getName().'" size="10"';
+    // id must contain the form name to be unique if there are multiple forms on a single page
+    $toReturn = '<input  '.$this->getDisabledAttribute().' '.$this->attribute.' type="text" tabindex="'.$tabIndex.'" name="'.$this->getName().'" id="'.$this->getId().'" size="10"';
     if (strlen($this->getValue() ?? '') > 0) {
       $toReturn .= ' value="'.$this->getValue().'"';
     }
@@ -53,7 +54,8 @@ class PLF_CoolDate extends PLF_Element {
     // (this will cause the javascript to not be linked ot the calendar image... this is what we want: if disabled
     // we don't want the user to be clicking to bring up a calendar control)
     if (!$this->getDisabled()) {
-      $toReturn .= $this->name.'trigger';
+      //$toReturn .= $this->name.'trigger';
+      $toReturn .= $this->getParentForm()->formName. '-'. $this->name.'trigger';
     }
     $toReturn .= '" '.$this->attribute.' />';
 
