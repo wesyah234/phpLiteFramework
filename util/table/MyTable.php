@@ -225,6 +225,7 @@ class PLF_Table {
     $this->oddRowCSSClass = $className;
   }
 
+  /** Add a spacer type row to the table. The value passed in will be placed into every cell in the row.  See addSpacerSingle for another option. */
   function addSpacer($value = '&nbsp;') {
     $this->rows .= '<tr>';
     for ($i = 0; $i < $this->numCells; $i++) {
@@ -232,6 +233,34 @@ class PLF_Table {
     }
     $this->rows .= '</tr>';
 
+  }
+
+  /**
+   * Add a spacer type row to the table. Does its best to find the center.  If there are an odd number of columns it will be placed in the middle column, centered.  If there are an even number of columns, it will be placed in the column just left of center, but right justified.
+   * @param $singleValue the value to display in the approximate center cell of the table
+   * @param $otherValue the value to display in all the other cells of the table
+   */
+  function addSpacerSingle($singleValue = '&nbsp;', $otherValue = '&nbsp;') {
+    // pick which cell will be the "center"... with an odd number of columns, it will be the middle
+    // with an even number of columns, it'll be the one just to the left. (which is why we will right justify
+    // if we hvae an even number of columns
+    if ($this->numCells % 2 == 0) {
+      $centerCellAlign = 'right';
+    }
+    else {
+      $centerCellAlign = 'center';
+    }
+    $centerCellToUse = round($this->numCells / 2) - 1;
+    $this->rows .= '<tr>';
+    for ($i = 0; $i < $this->numCells; $i++) {
+      if ($i == $centerCellToUse) {
+        $this->rows .= '<td style="text-align:'.$centerCellAlign.'">'.$singleValue.'</td>';
+      }
+      else {
+        $this->rows .= '<td style="text-align:center">'.$otherValue.'</td>';
+      }
+    }
+    $this->rows .= '</tr>';
   }
 
   /**
@@ -628,7 +657,7 @@ class PLF_Table {
       // note, the order of the letters below does not control where it is left/right, that is controlled
       // buy the CSS right above.  (this is just used to kill off the unwanted "length changing input control")
       // note, if asking for more than the num of rows, or not specifying a count, the pagination won't display
-     $config .= "dom:'fiprt',";
+      $config .= "dom:'fiprt',";
       // this says don't apply any initial client side ordering.  default is to order by the first column which is asinine!
       $config .= "order:[],";
       // the .datetime calls here are sending in moment.js format strings as possible datetime formats for the client side sorting routines
@@ -636,8 +665,8 @@ class PLF_Table {
       // for datetimes: we are sending in both date formats above, along with the 12 hr clock with AMPM and a zero padded minute and a non padded hour
       // for any other formats, you can use the parameters on the setFancy method to send in a couple more formats, one for date and one for datetime.
       $extraSettings = '';
-      $extraSettings .= isReallySet($this->addlMomentDateFormat)?"DataTable.datetime('{$this->addlMomentDateFormat}');":'';
-      $extraSettings .= isReallySet($this->addlMomentDatetimeFormat)?"DataTable.datetime('{$this->addlMomentDatetimeFormat}');":'';
+      $extraSettings .= isReallySet($this->addlMomentDateFormat) ? "DataTable.datetime('{$this->addlMomentDateFormat}');" : '';
+      $extraSettings .= isReallySet($this->addlMomentDatetimeFormat) ? "DataTable.datetime('{$this->addlMomentDatetimeFormat}');" : '';
       $toReturn .= '<script>DataTable.datetime(\'MM/DD/YYYY\');DataTable.datetime(\'M/D/YYYY\');DataTable.datetime(\'MM/DD/YYYY H:mm A\');DataTable.datetime(\'M/D/YYYY H:mm A\');'.$extraSettings.' new DataTable(\'#'.$this->tableId.'\', {language:{search:\'Filter:\'},info:true,ordering:true,paging:true,'.$config.'}); </script>';
     }
 
