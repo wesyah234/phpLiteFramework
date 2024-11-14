@@ -241,7 +241,7 @@ function &getConnection($dbusername = DBUSERNAME, $dbpassword = DBPASSWORD, $dbn
     if (!$theConnection) {
       // there was a problem constructing the connection object presumably due to problems in the config
       // file
-      logError("Problem creating the database connection with hostname: $dbhostname, username: $dbusername, db name: $dbname, driver name: $adodbdriver, please double check the config file settings for the database");
+      logError("Problem creating the database connection (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver), please double check the config file settings for the database");
     }
     // force indexing by the field names, override this using setNumFetchMode()
     $theConnection->SetFetchMode(ADODB_FETCH_ASSOC);
@@ -292,7 +292,7 @@ function &getConnection($dbusername = DBUSERNAME, $dbpassword = DBPASSWORD, $dbn
       // first time after a failure, and don't want to have to wait the full
       // second or display any msg
       if ($tries > 1) {
-        logWarning('xxunable to connect to db --  Sleeping '.$secondsSleepBetweenTries.' seconds, then will try again, remaining tries: '.($numTries - $tries).' -- ErrorNo: '.$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg());
+        logWarning("unable to connect to db (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver) --  Sleeping $secondsSleepBetweenTries seconds, then will try again, remaining tries: ".($numTries - $tries).' -- ErrorNo: '.$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg());
         sleep($secondsSleepBetweenTries);
       }
       // attempt to clear the apc cache, if we're using APC:
@@ -303,7 +303,7 @@ function &getConnection($dbusername = DBUSERNAME, $dbpassword = DBPASSWORD, $dbn
       if (!$theConnection) {
         // there was a problem constructing the connection object presumably due to problems in the config
         // file
-        logError("Problem creating the database connection, please check other warnings and double check the config file settings for the database");
+        logError("Problem creating the database connection (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver), please check other warnings and double check the config file settings for the database");
       }
       $theConnection->NLS_DATE_FORMAT = 'MM/DD/YYYY';
       if (USE_PERSISTENT_DB_CONNECT) {
@@ -314,17 +314,17 @@ function &getConnection($dbusername = DBUSERNAME, $dbpassword = DBPASSWORD, $dbn
       }
     }
     if (!$return) {
-      $message = "Unable to connect to db (host: $dbhostname user: $dbusername name: $dbname), tried $tries times -- ErrorNo: ".$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg();
+      $message = "Unable to connect to db (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver), tried $tries times, waiting $secondsSleepBetweenTries seconds between each try for a total of ".($tries * $secondsSleepBetweenTries)." seconds -- ErrorNo: ".$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg();
       logError($message);
       die();
     }
     else if (checkDbErrorNo($theConnection->ErrorNo())) {
-      $message = "pconnect (host: $dbhostname user: $dbusername name: $dbname) continued to set non zero error num, even after ".$tries.' tries -- ErrorNo: '.$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg();
+      $message = "pconnect (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver) continued to set non zero error num, even after ".$tries.' tries -- ErrorNo: '.$theConnection->ErrorNo().' ErrorMsg: '.$theConnection->ErrorMsg();
       logError($message);
       die();
     }
     else if ($tries > 1) {
-      logWarning('successfully connected after failing '.$tries.' time(s)');
+      logWarning("successfully connected (host: $dbhostname user: $dbusername name: $dbname driver: $adodbdriver) after failing $tries time(s). This time to reconnect was ".($tries * $secondsSleepBetweenTries)." seconds.");
     }
     else {
 //      trigger_error('dont log this , success on first connect', E_USER_WARNING);
