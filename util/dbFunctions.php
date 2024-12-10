@@ -152,13 +152,13 @@ function &getNamedConnection($connectionName = NULL) {
   if ($connectionName != NULL) {
     $connectionName .= '_';
   }
-  if (plfConstant($connectionName.'ADODBDRIVER') == NULL || plfConstant($connectionName.'DBHOSTNAME') == NULL || plfConstant($connectionName.'DBUSERNAME') == NULL || plfConstant($connectionName.'DBPASSWORD') == NULL || plfConstant($connectionName.'DBNAME') == NULL) {
+  if (plfConstant($connectionName.'ADODBDRIVER') == NULL || plfConstant($connectionName.'DBHOSTNAME') == NULL || plfConstant($connectionName.'DBUSERNAME') == NULL || plfConstant($connectionName.'DBPASSWORD') == NULL) {
     if (isset($connectionName)) {
-      logError("You are attempting to use a database named $connectionNameOrig, but the database connection settings for this database are not defined.  To use this database, you must define 5 constants named after this connection name: {$connectionName}ADODBDRIVER, {$connectionName}DBHOSTNAME, {$connectionName}DBNAME, {$connectionName}DBUSERNAME, and {$connectionName}DBPASSWORD. These constants must be defined in the index.php file or provided as system environment variables, prior to calling plfGo().");
+      logError("You are attempting to use a database named $connectionNameOrig, but the database connection settings for this database are not defined.  To use this database, you must define at least 4 constants named after this connection name: {$connectionName}ADODBDRIVER, {$connectionName}DBHOSTNAME, {$connectionName}DBUSERNAME, and {$connectionName}DBPASSWORD. These constants must be defined in the index.php file or provided as system environment variables, prior to calling plfGo().");
       die();
     }
     else {
-      logError("You are attempting to use a database function but the database connection settings are not defined.  To use the database functions, you must define 5 constants: ADODBDRIVER, DBHOSTNAME, DBNAME, DBUSERNAME, and DBPASSWORD. These constants must be defined in the index.php file or provided as system environment variables, prior to calling plfGo().");
+      logError("You are attempting to use a database function but the database connection settings are not defined.  To use the database functions, you must define at least 4 constants: ADODBDRIVER, DBHOSTNAME, DBUSERNAME, and DBPASSWORD. These constants must be defined in the index.php file or provided as system environment variables, prior to calling plfGo().");
       die();
     }
   }
