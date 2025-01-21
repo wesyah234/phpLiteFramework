@@ -364,7 +364,7 @@ function dbQuoteString($value, $dbname = NULL) {
   }
   else {
     $dbconn = getNamedConnection($dbname);
-    return $dbconn->qstr($value);
+    return $dbconn->qstr($value ?? '');
   }
 }
 
