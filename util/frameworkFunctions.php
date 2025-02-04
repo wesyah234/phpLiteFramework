@@ -2791,6 +2791,10 @@ function sendMail_private($replyToBounceAddress, $fromAddress, $fromName, $toNam
   }
 }
 
+function removeAllUnprintable($string) {
+  return preg_replace('/[\p{C}\s]+/u', '', $string);
+}
+
 /**
  * Count the number of lines in a string, using PHP_EOL, and trying to handle the final line which
  * may not end with a newline, or if there's a newline at the end but no text on that line, don't count it
