@@ -48,6 +48,7 @@ require 'Checkbox.php';
 require 'Hidden.php';
 require 'ReadOnlyText.php';
 require 'ReadOnlyCheckbox.php';
+require 'ReadOnlyDate.php';
 require 'CoolDate.php';
 require 'CharismaDate.php';
 require 'CoolDateTime.php';
@@ -313,6 +314,9 @@ class PLF_Form {
 
   function addReadOnlyText($name, $label, $size) {
     $this->addElement(new PLF_ReadOnlyText($name, $label, $size));
+  }
+  function addReadOnlyDate($name, $label, $size) {
+    $this->addElement(new PLF_ReadOnlyDate($name, $label, $size));
   }
 
   function addReadOnlyCheckbox($name, $label, $size) {
