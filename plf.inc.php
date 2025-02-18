@@ -367,16 +367,16 @@ function plfGo($projectDir) {
       $timeStringFromClient = getRequestVarString('t');
       $return = "\n   --keepin the dream alive!--\n\nfor session id: ".session_id()."\n  from IP addr: ".$remoteClientIp." \n      datetime: ".date('D___d_M_Y___H_i_s')." \ninactive since: $timeStringFromClient \nwhich was: $inactiveSeconds seconds ago\n or about: $inactiveMinutes minutes ago\n or about: $inactiveHours hours ago";
     }
-    elseif (empty($module) || !loadModuleFile($projectDir, $module)) {
-      loadModuleFile($projectDir, DEFAULTMODULE);
-      $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
-    }
     elseif ('showStatusMsg' == $module) {
       // this "persistent" status message is propagated via cookie
       // to avoid using the session which would result in unncessary
       // session creation on the server in the case where sessions are not
       // explicitly being used.  didn't use url because this makes the url messy
       $return = getSessionVar('statusMsgSticky');
+    }
+    elseif (empty($module) || !loadModuleFile($projectDir, $module)) {
+      loadModuleFile($projectDir, DEFAULTMODULE);
+      $return = callFunc(DEFAULTMODULE, DEFAULTFUNC);
     }
     else {
       loadModuleFile($projectDir, $module);
