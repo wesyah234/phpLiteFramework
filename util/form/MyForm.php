@@ -1008,10 +1008,14 @@ function verify() {
       foreach ($this->coolDateNames as $coolDateName) {
         if (in_array($coolDateName, $this->renderedElementNames)) {
           // here we use the form name with a dash to reference the unique ID of the cooldate control, to make things work when we have multiple forms on a page
+          // NOTE: we added an onUpdate function to be called that will add the "dirty" css class to the form
+          // which will make it considered "updated/dirty" so that if the form is set with ->setWarnDirtyForm()
+          // a click on the calendar and subsequent click of a date, will be equivalent to editing a date manually
           $toReturn .= 'Calendar.setup(
             {
               inputField  : "'.$this->formName.'-'.$coolDateName.'",
-              button      : "'.$this->formName.'-'.$coolDateName.'trigger"
+              button      : "'.$this->formName.'-'.$coolDateName.'trigger",
+              onUpdate : function() { $("'.$this->formName.'").addClass(\'dirty\')}
             }
           );';
         }
