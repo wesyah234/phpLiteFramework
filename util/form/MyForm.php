@@ -455,14 +455,14 @@ class PLF_Form {
     }
   }
 
-  function setDisabled() {
-    $this->disabled = true;
+  function setDisabled($incomingVal = true){
+    $this->disabled = $incomingVal;
     $elements = $this->getEditableElements();
     foreach (array_keys($elements) as $key) {
       // use & here since want to work on reference to the element
       // not a copy!  LOVE PHP4!
       $currentElement = &$this->elements[$key];
-      $currentElement->setDisabled(true);
+      $currentElement->setDisabled($this->disabled);
     }
   }
 
