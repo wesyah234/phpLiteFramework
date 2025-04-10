@@ -1725,7 +1725,7 @@ function pushRequestUrl() {
     if (count($lastUrls) > 20) {
       array_pop($lastUrls); // pull off oldest one
     }
-    setCookieVar('lastUrlArray', serialize($lastUrls));
+    setCookieVar('lastUrlArray', json_encode($lastUrls));
   }
 }
 
@@ -1740,7 +1740,7 @@ function getLastUrlArray($max = 20, $filterDuplicates = false, $filterBlankTitle
 // php site anymore to figure out why I had added stripslashes in the first place!
     //$lastUrls = unserialize(stripslashes($lastUrlsCookie));
     //$lastUrls = array_slice(unserialize($lastUrlsCookie), 0, $max);
-    $lastUrls = unserialize($lastUrlsCookie);
+    $lastUrls = json_decode($lastUrlsCookie, true);
     // keep the arrayUnshift call in pushRequestUrl happy:
     if (empty($lastUrls)) {
       $lastUrls = array();
