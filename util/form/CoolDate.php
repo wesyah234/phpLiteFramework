@@ -43,11 +43,11 @@ class PLF_CoolDate extends PLF_Element {
   // MyForm class will set tabindex before calling this method
   function render($tabIndex) {
     // id must contain the form name to be unique if there are multiple forms on a single page
-    $toReturn = '<input  '.$this->getDisabledAttribute().' '.$this->attribute.' type="text" tabindex="'.$tabIndex.'" name="'.$this->getName().'" id="'.$this->getId().'" size="10"';
+    $toReturn = '<div style="display: flex; align-items: center;"><input '.$this->getDisabledAttribute().' '.$this->attribute.' type="text" tabindex="'.$tabIndex.'" name="'.$this->getName().'" id="'.$this->getId().'" size="10"';
     if (strlen($this->getValue() ?? '') > 0) {
       $toReturn .= ' value="'.$this->getValue().'"';
     }
-    $toReturn .= ' />';
+    $toReturn .= '/>';
 
     $toReturn .= '&nbsp;<img src="'.getFrameworkUrl().'/thirdParty/dhtmlCalendar/jscalendar-1.0/img.gif'.'" id="';
     // don't display the id of the trigger image if this form element is disabled
@@ -58,7 +58,7 @@ class PLF_CoolDate extends PLF_Element {
       $toReturn .= $this->getParentForm()->formName. '-'. $this->name.'trigger';
     }
     $toReturn .= '" '.$this->attribute.' />';
-
+    $toReturn .= '</div>'; // end of display flex
     return $toReturn;
   }
 
