@@ -61,7 +61,7 @@ class PLF_MultipleSelectChosen extends PLF_MultipleSelectionElement {
 
       $toReturn .= '</select>';
       $toReturn .= '<script type="text/javascript">
- $(".chosen-select").chosen({search_contains:true});
+ $(".chosen-select").chosen({search_contains:true, width:"100%"});
  </script>';
     }
 
