@@ -133,7 +133,7 @@ class PLF_Form {
   var $additionalSubmitButtons = array(); // holds additional buttons the user can click on.
   var $hideableDivs = array(); // holds divs that will show/hide with javascript based on other form values
   var $warnDirtyForm = false; // indicates if we should reference the jquery are you sure javascript to warn when leaving form with unsaved changes https://github.com/codedance/jquery.AreYouSure
-
+  var $inlineCss = ''; // used to set the inline css for the form
 
   /**
    * Construct a Form
@@ -624,6 +624,7 @@ class PLF_Form {
   // to control your own layout
   function formStart() {
     $toReturn = '';
+    $toReturn .= '<style> '.$this->inlineCss.'</style>';
     $onSubmit = '';
 
     if ($this->useCheckboxes) {
@@ -1254,6 +1255,16 @@ function verify() {
     }
     $toReturn .= "</tbody>";
     return $toReturn;
+  }
+/**
+ * If necessary to help layout the form, pass in some CSS to be used when rendering the form.
+ * EX:
+ * $theForm->setInlineCss('.plf_formlabel {  width:257px;} .plf_formfield {  width:356px;} ');
+ *
+ * NOTE: the SelectChosen and MultipleSelectChosen controls generally will need the above, as they are configured to fill out 100% of their container, so by using the above css, we can control the width of the labels, and the width of the fields.  Tip: use quickRender first to see how things are laid out, then use the above to control the layout.  A lot depends on the values being put into the select and multiple select controls, so you may need to play with the css a bit to get it just right.
+ */
+  function setInlineCss($css) {
+    $this->inlineCss = $css;
   }
 
   // use quickRender to get the fields rendered in order
