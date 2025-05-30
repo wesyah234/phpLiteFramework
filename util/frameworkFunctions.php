@@ -1699,6 +1699,22 @@ if (!function_exists('dateDiff')) {
 
 }
 
+function calculateMedian(array $numbers): float {
+  // Sort the array
+  sort($numbers);
+  $count = count($numbers);
+
+  // If odd number of elements, return middle element
+  if ($count % 2 !== 0) {
+    return $numbers[floor($count / 2)];
+  }
+
+  // If even number of elements, return average of two middle elements
+  $middle1 = $numbers[($count / 2) - 1];
+  $middle2 = $numbers[$count / 2];
+  return ($middle1 + $middle2) / 2;
+}
+
 /**
  * used internally by plf.inc.php to push up to 5 urls on a stack
  * (managed via a cookie to prevent unnecessary session creation)
