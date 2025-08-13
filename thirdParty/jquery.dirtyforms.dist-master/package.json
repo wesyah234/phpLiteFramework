@@ -1,0 +1,38 @@
+{
+  "name": "jquery.dirtyforms",
+  "version": "2.0.0",
+  "description": "Dirty Forms is a jQuery plugin to help prevent users from losing data when editing forms.",
+  "main": "jquery.dirtyforms.min.js",
+  "files": [
+    "jquery.dirtyforms.*",
+    "LICENSE*"
+  ],
+  "dependencies": {
+    "jquery": ">=1.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snikch/jquery.dirtyforms.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "dirty",
+    "forms",
+    "confirmation",
+    "validate",
+    "validation",
+    "areyousure",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "author": "Mal Curtis <mal@mal.co.nz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snikch/jquery.dirtyforms/issues"
+  },
+  "homepage": "https://github.com/snikch/jquery.dirtyforms#readme"
+}
