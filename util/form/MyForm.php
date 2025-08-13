@@ -132,7 +132,7 @@ class PLF_Form {
   var $disabled = false; // whether all the form elements should be set to "disabled" to prevent edits
   var $additionalSubmitButtons = array(); // holds additional buttons the user can click on.
   var $hideableDivs = array(); // holds divs that will show/hide with javascript based on other form values
-  var $warnDirtyForm = false; // indicates if we should reference the jquery are you sure javascript to warn when leaving form with unsaved changes https://github.com/codedance/jquery.AreYouSure
+  var $warnDirtyForm = false; // indicates if we should reference the dirty form detection javascript to warn when leaving form with unsaved changes https://github.com/snikch/jquery.dirtyforms
   var $inlineCss = ''; // used to set the inline css for the form
 
   /**
@@ -1117,8 +1117,11 @@ function verify() {
     }
 
     if ($this->warnDirtyForm) {
-      $toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/jquery/jquery.are-you-sure.js"></script>';
-      $toReturn .= javascript('window.onload =  $(\'form\').areYouSure();');
+//      $toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/jquery/jquery.are-you-sure.js"></script>';
+//      $toReturn .= javascript('window.onload =  $(\'form\').areYouSure();');
+      // replaced the old are-you-sure with this one, due to some oddities with date popups.
+      $toReturn .= '<script type="text/javascript" src="'.$frameworkUrl.'/thirdParty/jquery.dirtyforms.dist-master/jquery.dirtyforms.js"></script>';
+      $toReturn .= javascript("$(function() { $('#".$this->formName."').dirtyForms(   ); });");
     }
     return $toReturn;
   }
