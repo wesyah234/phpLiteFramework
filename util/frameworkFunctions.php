@@ -1741,13 +1741,15 @@ function pushRequestUrl() {
     if (count($lastUrls) > 20) {
       array_pop($lastUrls); // pull off oldest one
     }
-    setCookieVar('lastUrlArray', json_encode($lastUrls));
+    //setCookieVar('lastUrlArray', json_encode($lastUrls));
+    setSessionVar('lastUrlArray', json_encode($lastUrls));
   }
 }
 
 function getLastUrlArray($max = 20, $filterDuplicates = false, $filterBlankTitles = false) {
   $lastUrls = array();
-  $lastUrlsCookie = getCookieVar('lastUrlArray');
+  //$lastUrlsCookie = getCookieVar('lastUrlArray');
+  $lastUrlsCookie = getSessionVar('lastUrlArray');
   if (isReallySet($lastUrlsCookie)) {
 // needed to also stripslashes, per this post:
 // http://us3.php.net/manual/en/function.setcookie.php#50617
