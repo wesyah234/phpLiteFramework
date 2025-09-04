@@ -279,9 +279,9 @@ function plfGo($projectDir) {
       }
     }
 
-    // grab the pretty params from the query string, urldecoding them first in case anyone converts slashes to %2F, etc
-    // this is what coveo web crawler was doing
-    $prettyParams = explode('/', urldecode($_SERVER['QUERY_STRING']));
+    // grab the pretty params from the query string, and no, we can't urldecode here as we'll break urls like:
+    // http://mysite.com/?mymodule/myfunc/parm1/value1%2Fvalue2
+    $prettyParams = explode('/', $_SERVER['QUERY_STRING']);
 
     // If url looks like this:
     // http://mysite.com/?mymodule/myfunc/parm1/value1&oldstyleparm=oldstylevalue
