@@ -4569,6 +4569,21 @@ function cleanArray($arrayToClean) {
   return $resarray;
 }
 
+function safeFormatDate($dateString, $inFormat, $outFormat, $returnOnFail = "")
+{
+  if (empty($dateString)) {
+    return $returnOnFail;
+  }
+
+  $dt = DateTime::createFromFormat($inFormat, $dateString);
+
+  if ($dt === false) {
+    return $returnOnFail;
+  }
+
+  return $dt->format($outFormat);
+}
+
 /**
  * ready user output
  * <br>
@@ -4744,11 +4759,19 @@ function getProtocol() {
 
 function getFrameworkUrl() {
   $proto = getProtocol();
-  if ("http://" == $proto) {
-    return str_replace("https://", "http://", FRAMEWORKURL);
+  $port = $_SERVER['SERVER_PORT'];
+
+  // Append the port to the URL if it's not the default for the protocol
+  if (($proto === 'http://' && $port != 80) || ($proto === 'https://' && $port != 443)) {
+    $port = ':' . $port;
+  } else {
+    $port = '';
   }
-  else {
-    return str_replace("http://", "https://", FRAMEWORKURL);
+
+  if ("http://" == $proto) {
+    return str_replace("https://", "http://", FRAMEWORKURL) . $port;
+  } else {
+    return str_replace("http://", "https://", FRAMEWORKURL) . $port;
   }
 }
 
