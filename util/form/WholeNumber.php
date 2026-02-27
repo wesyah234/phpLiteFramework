@@ -71,7 +71,7 @@ class PLF_WholeNumber extends PLF_Element {
   function validate() {
     // call standard parent validation method (required field)
     // then do own validation
-    $this->value = trim($this->value);
+    $this->value = trim($this->value ?? '');
     if (parent::validate()) {
       if (strlen($this->value ?? '') > 0) {
         if (!is_numeric($this->value)) {

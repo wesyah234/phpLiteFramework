@@ -356,7 +356,7 @@ class PLF_Table_orig
             if ($element == $key) {
               $this->rows .= ' selected ="selected"';
             }
-            $this->rows .= '>'.htmlspecialchars($value);
+            $this->rows .= '>'.htmlspecialchars($value ?? '');
             $this->rows .= '</option>';
           }
           $this->rows .= '</select>';

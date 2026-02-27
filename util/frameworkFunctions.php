@@ -915,7 +915,7 @@ function makeFormSelect($name, $label, $values, $initialValue = null) {
     if ($initialValue == $key) {
       $toReturn .= ' selected ="selected"';
     }
-    $toReturn .= '>'.htmlspecialchars($value);
+    $toReturn .= '>'.htmlspecialchars($value ?? '');
     $toReturn .= '</option>';
   }
   $toReturn .= '</select></td></tr>';
@@ -955,10 +955,10 @@ function makeAjaxIconPop($popupTitle, $iconUrl, $url, $callbackDivName = '', $la
     static $counter;
     $counter++;
     $id = "$label-$counter";
-    return '<a id="'.$id.'" title="'.htmlentities($popupTitle).'" href="javascript:void(0);" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this)"><img src="'.$iconUrl.'"></a>';
+    return '<a id="'.$id.'" title="'.htmlentities($popupTitle ?? '').'" href="javascript:void(0);" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this)"><img src="'.$iconUrl.'"></a>';
   }
   else {
-    return '<a href="javascript:void(0);" title="'.htmlentities($popupTitle).'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this)"><img src="'.$iconUrl.'"></a>';
+    return '<a href="javascript:void(0);" title="'.htmlentities($popupTitle ?? '').'" onclick="ajaxCheckbox(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this)"><img src="'.$iconUrl.'"></a>';
   }
 }
 
@@ -1009,7 +1009,7 @@ function makeAjaxCoolDate($url, $initialValue = NULL, $callbackDivName = '', $pa
 
   $toReturn = ' <input type="text" name="'.$id.'" id="'.$id.'" onfocusout="ajaxCoolDate(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\')" ';
 
-  $toReturn .= ' value="'.htmlspecialchars($initialValue).'"';
+  $toReturn .= ' value="'.htmlspecialchars($initialValue ?? '').'"';
   $toReturn .= ' />';
 
   return $toReturn;
@@ -1038,7 +1038,7 @@ function makeAjaxSelect($url, $values, $initialValue = NULL, $callbackDivName = 
     if ($initialValue == $key) {
       $toReturn .= ' selected ="selected"';
     }
-    $toReturn .= '>'.htmlspecialchars($value);
+    $toReturn .= '>'.htmlspecialchars($value ?? '');
     $toReturn .= '</option>';
   }
 
@@ -1058,7 +1058,7 @@ function makeAjaxText($url, $size, $maxlength, $initialValue = NULL, $callbackDi
 
   $toReturn = ' <input type="text" name="'.$id.'" id="'.$id.'" onkeyup="ajaxText(\''.jsEscapeString($url).'\', \''.$callbackDivName.'\', this, \''.$paramName.'\', '.$delayBeforeFiring.')"  ';
 
-  $toReturn .= ' value="'.htmlspecialchars($initialValue).'"';
+  $toReturn .= ' value="'.htmlspecialchars($initialValue ?? '').'"';
   $toReturn .= ' />';
   return $toReturn;
 }
@@ -1107,7 +1107,7 @@ function makeMultipleAjaxSelect($ajaxArray, $values, $initialValue = NULL, $para
     if ($initialValue == $key) {
       $toReturn .= ' selected ="selected"';
     }
-    $toReturn .= '>'.htmlspecialchars($value);
+    $toReturn .= '>'.htmlspecialchars($value ?? '');
     $toReturn .= '</option>';
   }
 
@@ -2018,14 +2018,14 @@ function msleep($time) {
 
 function parseDate($date) {
   $toReturn = array();
-  if (strpos($date, "/") !== false) {
+  if (strpos($date ?? '', "/") !== false) {
     $parts = explode('/', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[0], $parts[1], $parts[2]);
     $toReturn['month'] = $parts[0];
     $toReturn['day'] = $parts[1];
     $toReturn['year'] = $parts[2];
   }
-  elseif (strpos($date, "-") !== false) {
+  elseif (strpos($date ?? '', "-") !== false) {
     $parts = explode('-', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[1], $parts[2], $parts[0]);
     $toReturn['month'] = $parts[1];
@@ -2060,12 +2060,12 @@ function addMinutes($datetime, $minutes) {
  */
 function addDays($date, $days) {
   $dateReturn = null;
-  if (strpos($date, "/") !== false) {
+  if (strpos($date ?? '', "/") !== false) {
     $parts = explode('/', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[0], $parts[1] + $days, $parts[2]);
     $dateReturn = adodb_date('m/d/Y', $newDate);
   }
-  elseif (strpos($date, "-") !== false) {
+  elseif (strpos($date ?? '', "-") !== false) {
     $parts = explode('-', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[1], $parts[2] + $days, $parts[0]);
     $dateReturn = adodb_date('Y-m-d', $newDate);
@@ -2079,12 +2079,12 @@ function addDays($date, $days) {
  */
 function addMonths($date, $months) {
   $dateReturn = null;
-  if (strpos($date, "/") !== false) {
+  if (strpos($date ?? '', "/") !== false) {
     $parts = explode('/', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[0] + $months, $parts[1], $parts[2]);
     $dateReturn = adodb_date('m/d/Y', $newDate);
   }
-  elseif (strpos($date, "-") !== false) {
+  elseif (strpos($date ?? '', "-") !== false) {
     $parts = explode('-', $date);
     $newDate = adodb_mktime(0, 0, 0, $parts[1] + $months, $parts[2], $parts[0]);
     $dateReturn = adodb_date('Y-m-d', $newDate);
@@ -2631,7 +2631,7 @@ function resizeImage($newSize, $filename) {
  */
 function validEmail($email) {
   $isValid = true;
-  $atIndex = strrpos($email, "@");
+  $atIndex = strrpos($email ?? '', "@");
   if (is_bool($atIndex) && !$atIndex) {
     $isValid = false;
   }
@@ -4126,15 +4126,15 @@ function makeExternalLink($linkName, $url, $args = array()) {
 }
 
 function makeExternalLinkPop($popupTitle, $linkName, $url, $args = array()) {
-  return '<a title="'.htmlentities($popupTitle).'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
 }
 
 function makeExternalLinkPopNewWin($popupTitle, $linkName, $url, $args = array()) {
-  return '<a target="_blank" title="'.htmlentities($popupTitle).'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
+  return '<a target="_blank" title="'.htmlentities($popupTitle ?? '').'" href="'.$url.processArgsArray($args).'">'.$linkName.'</a>';
 }
 
 function makeExternalIconLinkPopNewWin($popupTitle, $iconUrl, $url, $args = array()) {
-  return '<a target="_blank" title="'.htmlentities($popupTitle).'" href="'.$url.processArgsArray($args).'"><img src="'.$iconUrl.'"/></a>';
+  return '<a target="_blank" title="'.htmlentities($popupTitle ?? '').'" href="'.$url.processArgsArray($args).'"><img src="'.$iconUrl.'"/></a>';
 }
 
 /**
@@ -4208,12 +4208,12 @@ function makeIconLinkConfirm($confirmText, $iconUrl, $modname = "", $func = "", 
 
 function makeIconLinkPopConfirm($popupTitle, $confirmText, $iconUrl, $modname = "", $func = "", $args = array()) {
   $url = makeUrl($modname, $func, $args);
-  return '<a title="'.htmlentities($popupTitle).'" href="#" onClick="if (confirm(\''.jsEscapeString($confirmText).'\')) {window.location=\''.$url.'\'};" ><img src="'.$iconUrl.'"></a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href="#" onClick="if (confirm(\''.jsEscapeString($confirmText).'\')) {window.location=\''.$url.'\'};" ><img src="'.$iconUrl.'"></a>';
 }
 
 function makeLinkPopConfirm($popupTitle, $confirmText, $linkName, $modname = "", $func = "", $args = array()) {
   $onclick = ' onclick="return confirm(\''.jsEscapeString($confirmText).'\')" ';
-  return '<a title="'.htmlentities($popupTitle).'" href="'.makeUrl($modname, $func, $args).'"'.$onclick.'>'.$linkName.'</a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href="'.makeUrl($modname, $func, $args).'"'.$onclick.'>'.$linkName.'</a>';
 }
 
 /**
@@ -4229,7 +4229,7 @@ function makeLinkPopConfirm($popupTitle, $confirmText, $linkName, $modname = "",
  * @return string The hyperlink, ie, <a href="... etc">linkname</a>
  */
 function makeIconLinkPop($popupTitle, $iconUrl, $modname = "", $func = "", $args = array()) {
-  return '<a title="'.htmlentities($popupTitle).'" href = "'.makeUrl($modname, $func, $args).'"><img src="'.$iconUrl.'"></a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href = "'.makeUrl($modname, $func, $args).'"><img src="'.$iconUrl.'"></a>';
 }
 
 /**
@@ -4243,7 +4243,7 @@ function makeIconLinkPop($popupTitle, $iconUrl, $modname = "", $func = "", $args
  * @return unknown The hyperlink, ie, <a href="... etc">linkname</a>
  */
 function makeIconPop($popupTitle, $iconUrl) {
-  return '<a title="'.htmlentities($popupTitle).'" href = "#"><img src="'.$iconUrl.'"></a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href = "#"><img src="'.$iconUrl.'"></a>';
 }
 
 /**
@@ -4258,7 +4258,7 @@ function makeIconPop($popupTitle, $iconUrl) {
  * @return unknown The hyperlink, ie, <a href="... etc">linkname</a>
  */
 function makeButtonLinkPop($popupTitle, $linkName, $modname = "", $func = "", $args = array()) {
-  return '<a title="'.htmlentities($popupTitle).'"  class="btn btn-primary" style="color:black;background-color:Gainsboro" onMouseOver="this.style.backgroundColor=\'#C0C0C0\'" onMouseOut="this.style.backgroundColor=\'Gainsboro\'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'"  class="btn btn-primary" style="color:black;background-color:Gainsboro" onMouseOver="this.style.backgroundColor=\'#C0C0C0\'" onMouseOut="this.style.backgroundColor=\'Gainsboro\'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
 }
 
 /**
@@ -4320,11 +4320,11 @@ function makeLinkRel($rel, $linkName, $modname = "", $func = "", $args = array()
  * @return unknown The hyperlink, ie, <a href="... etc">linkname</a>
  */
 function makeLinkPop($popupTitle, $linkName, $modname = "", $func = "", $args = array()) {
-  return '<a title="'.htmlentities($popupTitle).'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
+  return '<a title="'.htmlentities($popupTitle ?? '').'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
 }
 
 function makePop($popupTitle, $text) {
-  return '<acronym title="'.htmlentities($popupTitle).'">'.$text.'</acronym>';
+  return '<acronym title="'.htmlentities($popupTitle ?? '').'">'.$text.'</acronym>';
 }
 
 function makeLinkNewWin($linkName, $modname = "", $func = "", $args = array()) {
@@ -4332,7 +4332,7 @@ function makeLinkNewWin($linkName, $modname = "", $func = "", $args = array()) {
 }
 
 function makeLinkPopNewWin($popupTitle, $linkName, $modname = "", $func = "", $args = array()) {
-  return '<a target="_blank" title="'.htmlentities($popupTitle).'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
+  return '<a target="_blank" title="'.htmlentities($popupTitle ?? '').'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
 }
 
 function makeExternalLinkNewWin($linkName, $url, $args = array()) {
@@ -4347,7 +4347,7 @@ function makeLinkNamedWin($linkName, $modname = "", $func = "", $args = array())
 }
 
 function makeLinkPopNamedWin($popupTitle, $linkName, $modname = "", $func = "", $args = array()) {
-  return '<a target="'."$linkName-$args".'" title="'.htmlentities($popupTitle).'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
+  return '<a target="'."$linkName-$args".'" title="'.htmlentities($popupTitle ?? '').'" href="'.makeUrl($modname, $func, $args).'">'.$linkName.'</a>';
 }
 
 function makeExternalLinkNamedWin($linkName, $url, $args = array()) {
@@ -4610,7 +4610,7 @@ function pnVarPrepForDisplay() {
   foreach (func_get_args() as $ourvar) {
 
     // Prepare var
-    $ourvar = htmlspecialchars($ourvar);
+    $ourvar = htmlspecialchars($ourvar ?? '');
 
     $ourvar = preg_replace($search, $replace, $ourvar);
 

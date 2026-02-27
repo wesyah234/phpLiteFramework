@@ -72,7 +72,7 @@ class PLF_CharismaSelect extends PLF_Element {
       if ($this->value == $key) {
         $toReturn .= ' selected ="selected"';
       }
-      $toReturn .= '>'.htmlspecialchars($value);
+      $toReturn .= '>'.htmlspecialchars($value ?? '');
       $toReturn .= '</option>';
     }
 

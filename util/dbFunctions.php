@@ -680,7 +680,7 @@ function fetchRecordsAsXml($sql, $dbname = NULL) {
     for ($i = 0; $i < $rs->_numOfFields; $i++) {
       list($field, $value) = each($rs->fields);
       $xmlStr .= "<$field>";
-      $xmlStr .= htmlspecialchars($value);
+      $xmlStr .= htmlspecialchars($value ?? '');
       $xmlStr .= "</$field>";
     }
     $rs->moveNext();
@@ -698,7 +698,7 @@ function fetchRecordAsXml($sql, $dbname = NULL) {
   $xmlStr = '';
   $xmlStr .= "<row>";
   foreach ($array as $field => $value) {
-    $xmlStr .= "<$field>".htmlspecialchars($value)."</$field>";
+    $xmlStr .= "<$field>".htmlspecialchars($value ?? '')."</$field>";
   }
   $xmlStr .= "</row>";
   return $xmlStr;
@@ -707,7 +707,7 @@ function fetchRecordAsXml($sql, $dbname = NULL) {
 function createXmlFromRecord($record) {
   $xmlStr = '';
   foreach ($record as $field => $value) {
-    $xmlStr .= "<$field>".htmlspecialchars($value)."</$field>";
+    $xmlStr .= "<$field>".htmlspecialchars($value ?? '')."</$field>";
   }
   return $xmlStr;
 }
