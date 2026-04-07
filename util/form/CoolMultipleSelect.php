@@ -55,7 +55,7 @@ class PLF_CoolMultipleSelect extends PLF_MultipleSelectionElement {
         if (isset($this->value) && in_array($key, $this->value)) {
           $toReturn .= ' selected ="selected"';
         }
-        $toReturn .= '>'.htmlspecialchars($value);
+        $toReturn .= '>'.htmlspecialchars($value ?? '');
         $toReturn .= '</option>';
       }
 
