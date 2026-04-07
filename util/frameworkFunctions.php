@@ -4585,6 +4585,26 @@ function safeFormatDate($dateString, $inFormat, $outFormat, $returnOnFail = "")
 }
 
 /**
+ * Replace cr/lf with space in middle of string, and completely remove cr/lf at ends, and also trim whitespace from ends.  Used when we have forms for which we are using a TEXTAREA so that we get browser spellcheck, yet we really only want a single line of text.  Often users hit enter to submit the form, and we want to make sure that we don't have any extra whitespace in the middle of the string.
+ *
+ * Example:
+ *   $s = remove_crlf_and_trim($s);
+ *
+ * @param string|null $s Input string (null will be treated as empty string)
+ * @return string Cleaned string
+ */
+function remove_crlf_and_trim($s) {
+    if (!isset($s) || $s === null) {
+        return '';
+    }
+    // Remove CR/LF anywhere (internal and at ends)
+    $s = str_replace(["\r", "\n"], " ", $s);
+
+    // Trim all leading/trailing whitespace (spaces, tabs, etc.)
+    return trim($s);
+}
+
+/**
  * ready user output
  * <br>
  * Gets a variable, cleaning it up such that the text is
