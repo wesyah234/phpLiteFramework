@@ -3209,17 +3209,15 @@ function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars = null) {
     E_USER_ERROR => "Error",
     E_USER_WARNING => "Warning",
     E_USER_NOTICE => "Notice",
-    E_STRICT => "Runtime Notice",
     E_DEPRECATED => "Deprecated",
     E_USER_DEPRECATED => "User Deprecated",
     E_ALL => 'All'
   );
 
-  if ($errno == E_STRICT) {
-    // ignore E_STRICT for now...
-    return;
-  }
-  else if ($errno != E_USER_WARNING && $errno != E_USER_NOTICE && $errno != E_USER_ERROR) {
+  // Avoid referencing the deprecated E_STRICT constant directly (PHP 8.1+).
+  // Proceed with handling for errors that are not generated inside the framework
+  // (i.e. not E_USER_WARNING, E_USER_NOTICE, or E_USER_ERROR).
+  if ($errno != E_USER_WARNING && $errno != E_USER_NOTICE && $errno != E_USER_ERROR) {
     // these are errors *not* generated inside the framework (via logError(), logWarning(), or 
     // logNotice() calls), so just log them )
     $msg = $dt.' '.$filename.':'.$linenum.' '.$errmsg;
