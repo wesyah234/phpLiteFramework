@@ -3103,7 +3103,7 @@ function stringifyLogMessage($message) {
  * Return/print a nicely formatted backtrace
  * Based on code originally by John Lim
  *
- * @param bool $print If true, the backtrace will be printed
+ * @param array|null $traceArr optional trace array (for example from Throwable::getTrace())
  * @return string the formatted backtrace
  */
 function getBacktraceFormatted($traceArr = null) {
@@ -3200,6 +3200,12 @@ function advanceTheErrorLog() {
  *
  * Note: as of 9/2007, this was changed to just log without specifying
  * a filename, thus going to the webserver's error log.
+ *
+ * @param int $errno
+ * @param string $errmsg
+ * @param string $filename
+ * @param int $linenum
+ * @param ?Throwable $exception optional exception whose trace should be used
  */
 function userErrorHandler($errno, $errmsg, $filename, $linenum, ?Throwable $exception = null) {
   $dt = date("Y-m-d H:i:s O");
