@@ -435,8 +435,7 @@ function dbQuoteStringsAndTrim(&$values, $dbname = NULL) {
  */
 function checkError($dbconn) {
   if (checkDbErrorNo($dbconn->errorNo())) {
-    trigger_error('dbprovider: '.$dbconn->dataProvider.' dbtype: '.$dbconn->databaseType.' dbhost: '.$dbconn->host.' db: '.$dbconn->database.' dbuser: '.$dbconn->user.' dberrorMsg: '.$dbconn->errorMsg().' dberrorNo: '.$dbconn->errorNo(), E_USER_ERROR);
-    die();
+    throw new RuntimeException('dbprovider: '.$dbconn->dataProvider.' dbtype: '.$dbconn->databaseType.' dbhost: '.$dbconn->host.' db: '.$dbconn->database.' dbuser: '.$dbconn->user.' dberrorMsg: '.$dbconn->errorMsg().' dberrorNo: '.$dbconn->errorNo());
   }
 }
 

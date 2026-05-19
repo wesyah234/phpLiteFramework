@@ -39,10 +39,20 @@ define('FRONT_OF_URL', '?');
 
 define('UNIQUE_PREFIX', 'UNIQ_');
 
-// set a custom error handler function that will be called
-// whenever the code calls trigger_error("string error msg" , int error type);
-// this method is defined in this file
-set_error_handler('userErrorHandler');
+// convert user generated errors into exceptions (for PHP 8.4 compatibility)
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+  if (in_array($errno, [E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE], true)) {
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+  }
+  return false;
+});
+
+// route uncaught exceptions through legacy framework error handling
+set_exception_handler(function (Throwable $e) {
+  $errno = $e instanceof ErrorException ? $e->getSeverity() : E_USER_ERROR;
+  userErrorHandler($errno, $e->getMessage(), $e->getFile(), $e->getLine(), $e);
+  exit(1);
+});
 
 /**
  * Takes an array and throws away whatever is used as the key on each element, and replaces the key with the value stored in the field named $fieldName.  An example is provided for further explanation:
@@ -3025,7 +3035,7 @@ function getSiteServerName() {
  * @param String $message
  */
 function logNotice($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_NOTICE);
+  userErrorHandler(E_USER_NOTICE, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 /**
@@ -3034,8 +3044,7 @@ function logNotice($message) {
  * @param String $message
  */
 function logError($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_ERROR);
-  die();
+  throw new RuntimeException(stringifyLogMessage($message));
 }
 
 /**
@@ -3044,7 +3053,7 @@ function logError($message) {
  * @param String $message
  */
 function logErrorDontDie($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_ERROR);
+  userErrorHandler(E_USER_ERROR, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 /**
@@ -3066,7 +3075,7 @@ function logErrorSilent($message) {
  * @param String $message
  */
 function logWarning($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_WARNING);
+  userErrorHandler(E_USER_WARNING, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 function stringifyLogMessage($message) {
@@ -3094,10 +3103,10 @@ function stringifyLogMessage($message) {
  * Return/print a nicely formatted backtrace
  * Based on code originally by John Lim
  *
- * @param bool $print If true, the backtrace will be printed
+ * @param array|null $traceArr optional trace array (for example from Throwable::getTrace())
  * @return string the formatted backtrace
  */
-function getBacktraceFormatted() {
+function getBacktraceFormatted($traceArr = null) {
   $s = '';
 
   $MAXSTRLEN = 300;
@@ -3106,7 +3115,9 @@ function getBacktraceFormatted() {
     return (false);
 
   $s = "\n";
-  $traceArr = debug_backtrace();
+  if ($traceArr === null) {
+    $traceArr = debug_backtrace();
+  }
   $tabs = sizeof($traceArr) - 1;
 
   foreach ($traceArr as $arr) {
@@ -3189,9 +3200,19 @@ function advanceTheErrorLog() {
  *
  * Note: as of 9/2007, this was changed to just log without specifying
  * a filename, thus going to the webserver's error log.
+ *
+ * @param int $errno
+ * @param string $errmsg
+ * @param string $filename
+ * @param int $linenum
+ * @param ?Throwable $exception optional exception whose trace should be used
  */
-function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars = null) {
+function userErrorHandler($errno, $errmsg, $filename, $linenum, ?Throwable $exception = null) {
   $dt = date("Y-m-d H:i:s O");
+  $traceArr = null;
+  if ($exception instanceof Throwable) {
+    $traceArr = $exception->getTrace();
+  }
 
   // define an assoc array of error string
   // in reality the only entries we should
@@ -3260,13 +3281,13 @@ function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars = null) {
       }
       if (SHOWERRORSTOUSER) {
         echo htmlspecialchars($err).'<br/>';
-        echo '<pre>'.htmlspecialchars(getBacktraceFormatted()).'</pre><hr/>';
+        echo '<pre>'.htmlspecialchars(getBacktraceFormatted($traceArr)).'</pre><hr/>';
         echo getSessionForLogging();
       }
       else {
         echo FRIENDLY_ERROR_MSG_FOR_USER;
       }
-      $whatToLog = $err.getBacktraceFormatted().getSessionForLogging();
+      $whatToLog = $err.getBacktraceFormatted($traceArr).getSessionForLogging();
       if (EMAIL_ADMIN_ON_ERROR) {
         $pos = strpos(ADMIN_EMAIL_ADDR, ',');
         if ($pos) {
@@ -3281,18 +3302,18 @@ function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars = null) {
         }
       }
 //      error_log($err.getBacktraceFormatted(), 3, ERRORLOGNAME);
-      error_log($err.getBacktraceFormatted().getSessionForLogging());
+      error_log($err.getBacktraceFormatted($traceArr).getSessionForLogging());
     }
     else if (E_USER_WARNING == $errno) {
       if (SHOWWARNINGSTOUSER) {
         echo htmlspecialchars($err).'<br/>';
-        echo '<pre>'.htmlspecialchars(getBacktraceFormatted()).'</pre><hr/>';
+        echo '<pre>'.htmlspecialchars(getBacktraceFormatted($traceArr)).'</pre><hr/>';
       }
 //      error_log($err, 3, WARNINGLOGNAME);
       if (LOGWARNINGS) {
         // only do this if we're in a web environment, this doesn't make sense when using CLI
         if (isset($_SERVER['HTTP_HOST'])) {
-          error_log($err.getBacktraceFormatted().getSessionForLogging());
+          error_log($err.getBacktraceFormatted($traceArr).getSessionForLogging());
         }
       }
     }
