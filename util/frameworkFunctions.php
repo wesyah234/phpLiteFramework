@@ -39,10 +39,20 @@ define('FRONT_OF_URL', '?');
 
 define('UNIQUE_PREFIX', 'UNIQ_');
 
-// set a custom error handler function that will be called
-// whenever the code calls trigger_error("string error msg" , int error type);
-// this method is defined in this file
-set_error_handler('userErrorHandler');
+// convert user generated errors into exceptions (for PHP 8.4 compatibility)
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+  if (in_array($errno, [E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE], true)) {
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+  }
+  return false;
+});
+
+// route uncaught exceptions through legacy framework error handling
+set_exception_handler(function (Throwable $e) {
+  $errno = $e instanceof ErrorException ? $e->getSeverity() : E_USER_ERROR;
+  userErrorHandler($errno, $e->getMessage(), $e->getFile(), $e->getLine());
+  exit(1);
+});
 
 /**
  * Takes an array and throws away whatever is used as the key on each element, and replaces the key with the value stored in the field named $fieldName.  An example is provided for further explanation:
@@ -3025,7 +3035,7 @@ function getSiteServerName() {
  * @param String $message
  */
 function logNotice($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_NOTICE);
+  userErrorHandler(E_USER_NOTICE, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 /**
@@ -3034,8 +3044,7 @@ function logNotice($message) {
  * @param String $message
  */
 function logError($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_ERROR);
-  die();
+  throw new RuntimeException(stringifyLogMessage($message));
 }
 
 /**
@@ -3044,7 +3053,7 @@ function logError($message) {
  * @param String $message
  */
 function logErrorDontDie($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_ERROR);
+  userErrorHandler(E_USER_ERROR, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 /**
@@ -3066,7 +3075,7 @@ function logErrorSilent($message) {
  * @param String $message
  */
 function logWarning($message) {
-  trigger_error(stringifyLogMessage($message), E_USER_WARNING);
+  userErrorHandler(E_USER_WARNING, stringifyLogMessage($message), __FILE__, __LINE__);
 }
 
 function stringifyLogMessage($message) {
